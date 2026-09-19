@@ -15,10 +15,28 @@
 footer{padding:32px 0;border-top:1px solid #ffffff20;color:#9eb0a7}
 @media(max-width:850px){.heroGrid,.form{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.offerin{display:block}.big{margin-top:25px}}
 @media(max-width:560px){.grid{grid-template-columns:1fr}.brand span{display:none}.hero{padding-top:45px}.card img{height:auto}}
+
+.heroImg.heroCrop{
+  min-height:560px;
+  background-image:url("/assets/site.webp?v=11");
+  background-repeat:no-repeat;
+  background-size:500% 300%;
+  background-position:0% 0%;
+  object-fit:unset;
+}
+.coursePhoto{
+  width:100%;
+  height:260px;
+  background-image:url("/assets/site.webp?v=11");
+  background-repeat:no-repeat;
+  background-size:500% 300%;
+  background-position-y:0%;
+}
+@media(max-width:560px){.heroImg.heroCrop{min-height:420px}.coursePhoto{height:300px}}
 </style>
 </head>
 <body>
-<div class="nav"><div class="wrap navin"><div class="brand"><img class="logo" src="/assets/logo.webp?v=6" alt="ESA Logo"><span><b>ESA</b><br><small>Excellence in Every Skill</small></span></div><a class="btn" href="#enroll">احجز مكانك</a></div></div>
+<div class="nav"><div class="wrap navin"><div class="brand"><div class="logo" style="display:grid;place-items:center;background:#fff;color:#0b4b35;font-weight:1000;font-size:28px;letter-spacing:-2px">esa</div><span><b>ESA</b><br><small>Excellence in Every Skill</small></span></div><a class="btn" href="#enroll">احجز مكانك</a></div></div>
 
 <section class="hero"><div class="wrap heroGrid">
 <div>
@@ -27,11 +45,11 @@ footer{padding:32px 0;border-top:1px solid #ffffff20;color:#9eb0a7}
 <p>احتفالًا باليوم الوطني السعودي، طوّر مهاراتك مع ESA واستفد من خصم 50% على أي كورس لفترة محدودة.</p>
 <p><a class="btn" href="#courses">استكشف الكورسات</a></p>
 </div>
-<div><img class="heroImg" src="/assets/site.webp?v=6" alt="ESA Saudi National Day"></div>
+<div class="heroImg heroCrop" aria-label="ESA Saudi National Day"></div>
 </div></section>
 
 <section class="section" id="courses"><div class="wrap"><h2 class="title">اختار المهارة اللي هتغيّر خطوتك الجاية</h2><div class="grid">
-<div class="card"><img src="/assets/site.webp?v=6" alt="Data Analysis"><div class="txt"><span class="tag">50% OFF</span><h3>Data Analysis</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><img src="/assets/site.webp?v=6" alt="Cybersecurity"><div class="txt"><span class="tag">50% OFF</span><h3>Cybersecurity</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><img src="/assets/site.webp?v=6" alt="Graphic Design"><div class="txt"><span class="tag">50% OFF</span><h3>Graphic Design</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><img src="/assets/site.webp?v=6" alt="Learning & Development"><div class="txt"><span class="tag">50% OFF</span><h3>Learning & Development</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><img src="/assets/site.webp?v=6" alt="Performance & PMS"><div class="txt"><span class="tag">50% OFF</span><h3>Performance & PMS</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><img src="/assets/site.webp?v=6" alt="Healthcare Facility Management"><div class="txt"><span class="tag">50% OFF</span><h3>Healthcare Facility Management</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><img src="/assets/site.webp?v=6" alt="Digital Marketing"><div class="txt"><span class="tag">50% OFF</span><h3>Digital Marketing</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><img src="/assets/site.webp?v=6" alt="Networking & IT"><div class="txt"><span class="tag">50% OFF</span><h3>Networking & IT</h3><p>Practical skills • Career focused • ESA</p></div></div>
+<div class="card"><div class="coursePhoto" style="background-position:0% 0%" role="img" aria-label="Data Analysis"></div><div class="txt"><span class="tag">50% OFF</span><h3>Data Analysis</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><div class="coursePhoto" style="background-position:25% 0%" role="img" aria-label="Cybersecurity"></div><div class="txt"><span class="tag">50% OFF</span><h3>Cybersecurity</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><div class="coursePhoto" style="background-position:50% 0%" role="img" aria-label="Graphic Design"></div><div class="txt"><span class="tag">50% OFF</span><h3>Graphic Design</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><div class="coursePhoto" style="background-position:75% 0%" role="img" aria-label="Learning & Development"></div><div class="txt"><span class="tag">50% OFF</span><h3>Learning & Development</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><div class="coursePhoto" style="background-position:100% 0%" role="img" aria-label="Performance & PMS"></div><div class="txt"><span class="tag">50% OFF</span><h3>Performance & PMS</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><div class="coursePhoto" style="background-position:0% 0%" role="img" aria-label="Healthcare Facility Management"></div><div class="txt"><span class="tag">50% OFF</span><h3>Healthcare Facility Management</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><div class="coursePhoto" style="background-position:25% 0%" role="img" aria-label="Digital Marketing"></div><div class="txt"><span class="tag">50% OFF</span><h3>Digital Marketing</h3><p>Practical skills • Career focused • ESA</p></div></div><div class="card"><div class="coursePhoto" style="background-position:50% 0%" role="img" aria-label="Networking & IT"></div><div class="txt"><span class="tag">50% OFF</span><h3>Networking & IT</h3><p>Practical skills • Career focused • ESA</p></div></div>
 </div></div></section>
 
 <section class="offer"><div class="wrap offerin"><div><div class="gold" style="font-weight:900">LIMITED NATIONAL DAY OFFER</div><h2 class="title">استثمر في مهارتك الآن</h2><p>العرض متاح على جميع المسارات المعروضة ضمن الحملة.</p></div><div class="big">50%</div></div></section>
