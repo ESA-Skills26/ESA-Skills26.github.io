@@ -287,11 +287,30 @@
   <script>
     document.getElementById('leadForm').addEventListener('submit', function(e){
       e.preventDefault();
+
       var name = document.getElementById('name').value.trim();
       var phone = document.getElementById('phone').value.trim();
       var course = document.getElementById('course').value;
-      var msg = 'Hello ESA, I'm ' + name + '. My phone number is ' + phone + '. I want to enroll in ' + course + ' and get the Saudi National Day 50% offer.';
-      window.open('https://wa.me/201032226160?text=' + encodeURIComponent(msg), '_blank');
+
+      if (!name || !phone || !course) {
+        alert('من فضلك أكمل كل البيانات قبل الإرسال.\nPlease complete all fields before submitting.');
+        return;
+      }
+
+      var msg =
+        'مرحبًا ESA 👋\n' +
+        'أنا ' + name + '.\n' +
+        'رقم هاتفي: ' + phone + '\n' +
+        'أرغب في التسجيل في كورس: ' + course + '\n' +
+        'وأرغب في الاستفادة من عرض اليوم الوطني السعودي بخصم 50%. 🇸🇦\n\n' +
+        'Hello ESA 👋\n' +
+        'My name is ' + name + '.\n' +
+        'My phone number is: ' + phone + '\n' +
+        'I would like to enroll in: ' + course + '\n' +
+        'and benefit from the Saudi National Day 50% offer. 🇸🇦';
+
+      var waUrl = 'https://api.whatsapp.com/send?phone=201032226160&text=' + encodeURIComponent(msg);
+      window.location.href = waUrl;
     });
   </script>
 </body>
