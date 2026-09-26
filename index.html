@@ -102,6 +102,32 @@ section{padding:70px 0;border-top:1px solid #161616}.section-top{display:flex;ju
 .course:nth-child(n+9){display:none!important}
 @media(max-width:1100px){.courses{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:600px){#programs .wrap{padding:0 16px}.courses{grid-template-columns:1fr!important}.course-img{aspect-ratio:16/9!important}.course h3{font-size:19px!important}}
+</style><style id="esa-course-fit-fix">
+/* Show each program artwork in full without cropping */
+.course-img{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:1.62/1!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#08090a!important;
+  padding:0!important;
+}
+/* More balanced course detail modal typography */
+.modal-body h2{font-size:clamp(27px,3vw,40px)!important;line-height:1.12!important;margin-bottom:12px!important}
+.modal-intro{font-size:17px!important;line-height:1.65!important;margin-bottom:22px!important}
+.detail h4{font-size:18px!important;line-height:1.25!important;margin-bottom:11px!important}
+.detail ul{font-size:15px!important;line-height:1.7!important;padding-inline-start:21px!important}
+.detail{padding:16px!important}
+.modal-body{padding:0 28px 28px!important}
+@media(max-width:650px){
+ .modal-body h2{font-size:25px!important}
+ .modal-intro{font-size:15px!important}
+ .detail h4{font-size:16px!important}
+ .detail ul{font-size:14px!important}
+ .modal-body{padding:0 17px 20px!important}
+ .course-img{aspect-ratio:auto!important;max-height:none!important}
+}
 </style></head>
 <body>
 <header><div class="wrap nav"><a class="logo" href="#">esa<small>ACADEMY</small></a><nav class="links"><a href="#" data-en="Home" data-ar="الرئيسية">Home</a><a href="#programs" data-en="Programs" data-ar="البرامج">Programs</a><a href="#why" data-en="Why ESA" data-ar="لماذا ESA">Why ESA</a><a href="#about" data-en="About" data-ar="عن ESA">About</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></nav><div class="actions"><div class="lang"><button class="on" data-lang="en">EN</button><button data-lang="ar">عربي</button></div><a href="#register" class="btn" data-en="Register Now →" data-ar="سجل الآن ←">Register Now →</a></div></div></header>
