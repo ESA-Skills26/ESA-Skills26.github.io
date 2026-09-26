@@ -141,6 +141,31 @@ section{padding:70px 0;border-top:1px solid #161616}.section-top{display:flex;ju
   background:#08090a!important;
   margin:0!important;
 }
+</style><style id="esa-mobile-identity-final">
+/* ESA wordmark emphasis */
+header .logo{font-size:40px!important;line-height:.82!important;letter-spacing:-2.5px!important}
+header .logo small{font-size:8px!important;letter-spacing:3.2px!important;margin-top:7px!important}
+
+/* Mobile only: the actual hero image lives on .hero, so show that source in full */
+@media (max-width:700px){
+  header .logo{font-size:38px!important}
+  .hero{
+    min-height:0!important;
+    padding-top:min(78vw,560px)!important;
+    background-image:url('hero-eagle.webp')!important;
+    background-size:contain!important;
+    background-position:center top!important;
+    background-repeat:no-repeat!important;
+    overflow:visible!important;
+  }
+  .hero:after{
+    background:linear-gradient(180deg,rgba(5,5,5,0) 0%,rgba(5,5,5,.02) 52%,#050505 76%,#050505 100%)!important;
+    pointer-events:none!important;
+  }
+  .hero-art{display:none!important}
+  .hero>.wrap{position:relative!important;z-index:2!important}
+  .hero-inner{min-height:0!important;padding:10px 0 48px!important}
+}
 </style></head>
 <body>
 <header><div class="wrap nav"><a class="logo" href="#">esa<small>ACADEMY</small></a><nav class="links"><a href="#" data-en="Home" data-ar="الرئيسية">Home</a><a href="#programs" data-en="Programs" data-ar="البرامج">Programs</a><a href="#why" data-en="Why ESA" data-ar="لماذا ESA">Why ESA</a><a href="#about" data-en="About" data-ar="عن ESA">About</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></nav><div class="actions"><div class="lang"><button class="on" data-lang="en">EN</button><button data-lang="ar">عربي</button></div><a href="#register" class="btn" data-en="Register Now →" data-ar="سجل الآن ←">Register Now →</a></div></div></header>
