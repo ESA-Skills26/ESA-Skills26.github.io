@@ -20,7 +20,7 @@
     .brand .txt strong{display:block;font-size:1.15rem}
     .brand .txt span{display:block;color:var(--muted);font-size:.93rem}
     .navlinks{display:flex;gap:22px;flex-wrap:wrap;color:#eaf3ee}
-    .lang-switch{display:flex;gap:5px;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04)}.lang-switch button{border:0;background:transparent;color:var(--muted);padding:8px 11px;border-radius:999px;cursor:pointer;font-weight:700}.lang-switch button.active{background:var(--gold);color:#111}.nav-actions{display:flex;align-items:center;gap:10px}.navcta{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#162217;font-weight:800;box-shadow:0 10px 24px rgba(243,182,52,.25)}
+    .lang-switch{display:flex;gap:5px;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04)}.lang-switch button{border:0;background:transparent;color:var(--muted);padding:8px 11px;border-radius:999px;cursor:pointer;font-weight:700}.lang-switch button.active{background:var(--gold);color:#111}.nav-actions{display:flex;align-items:center;gap:10px}.navcta{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#162217;font-weight:800;box-shadow:0 10px 24px rgba(243,182,52,.25)} .lang-switch{display:flex;gap:5px;padding:4px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04)} .lang-btn{border:0;background:transparent;color:var(--muted);padding:8px 11px;border-radius:999px;cursor:pointer;font-weight:800}.lang-btn.active{background:var(--gold);color:#111}
     .hero{padding:54px 0 34px}
     .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:32px;align-items:center}
     .eyebrow{display:inline-block;padding:7px 12px;border:1px solid rgba(243,182,52,.35);background:rgba(243,182,52,.08);border-radius:999px;color:#ffe7a6;font-size:.85rem;font-weight:700;letter-spacing:.3px}
@@ -311,6 +311,7 @@
 
       var name = document.getElementById('name').value.trim();
       var phone = document.getElementById('phone').value.trim();
+      var email = document.getElementById('email').value.trim();
       var course = document.getElementById('course').value;
       var email = document.getElementById('email').value.trim();
 
@@ -337,5 +338,52 @@
       window.location.href = waUrl;
     });
   </script>
+
+  <script>
+  (function(){
+    const dict={
+      ar:{
+        htmlLang:'ar',dir:'rtl',
+        courses:'الكورسات',offer:'العرض',enroll:'احجز الآن',faq:'الأسئلة الشائعة',
+        heroTag:'ESA • Excellence in Every Skill',
+        heroTitle:'مهارات اليوم <span class="gold">لمستقبل أعلى</span>',
+        heroLead:'طوّر مهاراتك العملية مع ESA من خلال برامج مصممة لفرص حقيقية في مصر والخليج وما بعدهما.',
+        explore:'استكشف الكورسات',whatsapp:'تواصل واتساب',
+        enrollTitle:'احجز مكانك الآن',enrollText:'املأ البيانات واختار الكورس، وهيتفتح لك واتساب برسالة جاهزة لفريق ESA.',
+        nameLabel:'الاسم',phoneLabel:'رقم الموبايل',courseLabel:'الكورس',submit:'إرسال على واتساب',
+        contact:'بيانات التواصل'
+      },
+      en:{
+        htmlLang:'en',dir:'ltr',
+        courses:'Programs',offer:'Offers',enroll:'Register',faq:'FAQ',
+        heroTag:'ESA • Excellence in Every Skill',
+        heroTitle:'Skills Today. <span class="gold">A Higher Tomorrow.</span>',
+        heroLead:'Build practical, future-ready skills with ESA through programs designed for real opportunities in Egypt, the Gulf, and beyond.',
+        explore:'Explore Programs',whatsapp:'WhatsApp Us',
+        enrollTitle:'Reserve Your Seat',enrollText:'Enter your details and choose a program. WhatsApp will open with a ready message to the ESA team.',
+        nameLabel:'Full Name',phoneLabel:'Mobile Number',courseLabel:'Program',submit:'Send via WhatsApp',
+        contact:'Contact Details'
+      }
+    };
+    function setLang(lang){
+      const d=dict[lang]; document.documentElement.lang=d.htmlLang; document.documentElement.dir=d.dir;
+      localStorage.setItem('esaLang',lang);
+      document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+      const nav=document.querySelectorAll('.navlinks a'); if(nav.length>=4){nav[0].textContent=d.courses;nav[1].textContent=d.offer;nav[2].textContent=d.enroll;nav[3].textContent=d.faq;}
+      const cta=document.querySelector('.navcta'); if(cta) cta.textContent=lang==='ar'?cta.dataset.ar:cta.dataset.en;
+      const tag=document.querySelector('.hero .eyebrow'); if(tag) tag.textContent=d.heroTag;
+      const title=document.querySelector('.hero h1'); if(title) title.innerHTML=d.heroTitle;
+      const lead=document.querySelector('.hero .lead'); if(lead) lead.textContent=d.heroLead;
+      const acts=document.querySelectorAll('.hero-actions .btn'); if(acts[0])acts[0].textContent=d.explore;if(acts[1])acts[1].textContent=d.whatsapp;
+      const panel=document.querySelector('#enroll .panel'); if(panel){const h=panel.querySelector('h3'),p=panel.querySelector('p');if(h)h.textContent=d.enrollTitle;if(p)p.textContent=d.enrollText;}
+      const labels=document.querySelectorAll('#leadForm label'); if(labels[0])labels[0].textContent=d.nameLabel;if(labels[1])labels[1].textContent=d.phoneLabel;if(labels[2])labels[2].textContent=lang==='ar'?'البريد الإلكتروني (اختياري)':'Email (Optional)';if(labels[3])labels[3].textContent=d.courseLabel;
+      const sub=document.querySelector('#leadForm .submit'); if(sub)sub.textContent=d.submit;
+      const panels=document.querySelectorAll('#enroll .panel h3'); if(panels[1])panels[1].textContent=d.contact;
+    }
+    document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+    setLang(localStorage.getItem('esaLang')||'ar');
+  })();
+  </script>
+
 </body>
 </html>
