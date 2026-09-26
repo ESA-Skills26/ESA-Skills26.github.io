@@ -82,6 +82,26 @@ section{padding:70px 0;border-top:1px solid #161616}.section-top{display:flex;ju
 .course:hover .course-img{transform:scale(1.035);filter:contrast(1.08) saturate(1.08)}
 .course-info{padding:18px 20px 22px}
 @media(max-width:560px){.course-img{aspect-ratio:16/9}}
+</style><style id="esa-program-grid-v2">
+#programs{padding:72px 0 86px;background:radial-gradient(circle at 50% 20%,rgba(245,184,46,.055),transparent 30%),#050505}
+#programs .wrap{max-width:1480px}
+#programs .section-top{margin-bottom:28px}
+#programs .kicker{font-size:14px;letter-spacing:4px;color:#f4f4f1}
+#programs .section-title{font-size:clamp(38px,4.4vw,64px);font-weight:900;letter-spacing:-2px;line-height:.98}
+.courses{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important}
+.course{position:relative!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;min-height:0!important;aspect-ratio:auto!important;padding:0!important;border:1px solid #383838!important;border-radius:16px!important;background:linear-gradient(180deg,#0d0f11,#08090a)!important;overflow:hidden!important;box-shadow:0 18px 55px rgba(0,0,0,.25);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.course:hover{transform:translateY(-5px);border-color:#8b6927!important;box-shadow:0 24px 70px rgba(0,0,0,.42),0 0 30px rgba(245,184,46,.06)}
+.course:before,.course:after{display:none!important}
+.course-img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:1.62/1!important;object-fit:cover!important;object-position:center!important;margin:0!important;background:#101010;filter:contrast(1.08) saturate(1.06);transform:translateZ(0);transition:transform .45s ease,filter .45s ease}
+.course:hover .course-img{transform:scale(1.025);filter:contrast(1.11) saturate(1.1)}
+.course .icon{display:block!important;position:static!important;color:var(--gold);font-size:27px;margin:19px 20px 8px!important;height:28px}
+.course h3{position:static!important;margin:0 20px 8px!important;font-size:20px!important;line-height:1.25;font-weight:800}
+.course p{position:static!important;margin:0 56px 22px 20px!important;color:#c7c7c7!important;font-size:14px!important;line-height:1.55!important;min-height:44px}
+.course-more{opacity:1!important;transform:none!important;top:auto!important;right:18px!important;bottom:19px!important;width:38px!important;height:38px!important;border-color:var(--gold)!important;background:#0a0a0a!important;font-size:0!important}
+.course-more:after{content:"→";font-size:21px;color:var(--gold)}
+.course:nth-child(n+9){display:none!important}
+@media(max-width:1100px){.courses{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){#programs .wrap{padding:0 16px}.courses{grid-template-columns:1fr!important}.course-img{aspect-ratio:16/9!important}.course h3{font-size:19px!important}}
 </style></head>
 <body>
 <header><div class="wrap nav"><a class="logo" href="#">esa<small>ACADEMY</small></a><nav class="links"><a href="#" data-en="Home" data-ar="الرئيسية">Home</a><a href="#programs" data-en="Programs" data-ar="البرامج">Programs</a><a href="#why" data-en="Why ESA" data-ar="لماذا ESA">Why ESA</a><a href="#about" data-en="About" data-ar="عن ESA">About</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></nav><div class="actions"><div class="lang"><button class="on" data-lang="en">EN</button><button data-lang="ar">عربي</button></div><a href="#register" class="btn" data-en="Register Now →" data-ar="سجل الآن ←">Register Now →</a></div></div></header>
