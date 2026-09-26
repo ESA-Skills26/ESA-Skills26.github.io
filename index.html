@@ -40,7 +40,28 @@ section{padding:70px 0;border-top:1px solid #161616}.section-top{display:flex;ju
 .course-info{padding:18px 20px 20px;background:linear-gradient(180deg,#111,#090909);min-height:92px}
 .course-info h3,.course-info p{position:static!important;margin-left:0!important;margin-right:0!important}
 .course-info h3{margin:0 0 7px!important}.course-info p{margin:0!important}
-</style></head>
+</style>
+<style>
+.about-era{padding:84px 0;background:radial-gradient(circle at 15% 10%,rgba(243,182,52,.10),transparent 28%),linear-gradient(180deg,#050706,#090d0b);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-kicker{color:var(--gold2);letter-spacing:.22em;text-transform:uppercase;font-weight:800;font-size:.8rem}
+.about-title{font-size:clamp(2.5rem,5vw,4.7rem);line-height:1;margin:12px 0 20px;max-width:900px}
+.about-intro{font-size:1.08rem;line-height:1.9;color:var(--muted);max-width:850px}
+.about-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+.about-card{position:relative;overflow:hidden;min-height:240px;padding:24px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(255,217,120,.08),rgba(255,255,255,.02));transition:.35s ease}
+.about-card:hover{transform:translateY(-7px);border-color:rgba(243,182,52,.48);box-shadow:0 20px 45px rgba(0,0,0,.3)}
+.about-num{font-size:.8rem;color:var(--gold2);letter-spacing:.18em}
+.about-card h3{font-size:1.3rem;margin:38px 0 10px}
+.about-card p{color:var(--muted);line-height:1.75;margin:0}
+.esa-standard{margin-top:24px;padding:34px;border:1px solid rgba(243,182,52,.28);border-radius:26px;background:linear-gradient(110deg,rgba(243,182,52,.12),rgba(255,255,255,.025));text-align:center}
+.esa-standard small{color:var(--gold2);font-weight:800;letter-spacing:.2em}
+.esa-standard h3{font-size:clamp(1.7rem,3.4vw,3rem);line-height:1.25;margin:12px auto;max-width:900px}
+.esa-standard p{color:var(--muted);margin:0}
+.about-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:28px 0}
+.about-tags span{padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.035);font-size:.9rem}
+.about-cta{text-align:center;margin-top:30px}.about-cta h3{font-size:clamp(1.7rem,3vw,2.6rem);margin:0 0 18px}
+@media(max-width:900px){.about-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.about-grid{grid-template-columns:1fr}.about-era{padding:58px 0}}
+</style>
+</head>
 <body>
 <header><div class="wrap nav"><a class="logo" href="#">esa<small>ACADEMY</small></a><nav class="links"><a href="#" data-en="Home" data-ar="الرئيسية">Home</a><a href="#programs" data-en="Programs" data-ar="البرامج">Programs</a><a href="#why" data-en="Why ESA" data-ar="لماذا ESA">Why ESA</a><a href="#about" data-en="About" data-ar="عن ESA">About</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></nav><div class="actions"><div class="lang"><button class="on" data-lang="en">EN</button><button data-lang="ar">عربي</button></div><a href="#register" class="btn" data-en="Register Now →" data-ar="سجل الآن ←">Register Now →</a></div></div></header>
 <main>
@@ -71,4 +92,19 @@ function fill(id,arr){document.getElementById(id).innerHTML=arr.map(x=>'<li>'+x+
 function openCourse(title){const d=courseInfo[title];if(!d)return;const ar=document.documentElement.lang==='ar',i=ar?1:0;modalTitleEl.textContent=ar?d.ar:title;modalIntroEl.textContent=d.intro[i];hero.style.backgroundImage="url('"+d.img+"')";fill('modalLearn',d.learn[i]);fill('modalBenefits',d.benefit[i]);fill('modalCareer',d.career[i]);fill('modalMarket',d.market[i]);learnHeadEl.textContent=ar?'ماذا ستتعلم':'WHAT YOU’LL LEARN';benefitHeadEl.textContent=ar?'ما الاستفادة':'WHY IT MATTERS';careerHeadEl.textContent=ar?'كيف يؤهلك لسوق العمل':'CAREER READINESS';marketHeadEl.textContent=ar?'لماذا يحتاج السوق لهذه المهارة':'WHY THE MARKET NEEDS IT';modalRegisterEl.textContent=ar?'احجز مقعدك ←':'Reserve Your Seat →';modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
 document.querySelectorAll('.course').forEach(el=>{el.insertAdjacentHTML('afterbegin','<span class="course-more">+</span>');const go=()=>openCourse(el.querySelector('h3').dataset.en);el.addEventListener('click',go);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
 function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''};document.querySelector('.modal-close').onclick=closeModal;document.querySelector('.modal-backdrop').onclick=closeModal;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});modalRegisterEl.onclick=closeModal;
-</script></body></html>
+</script>
+<script>
+(function(){
+  function applyDataLang(){
+    const lang=document.documentElement.lang==='en'?'en':'ar';
+    document.querySelectorAll('[data-ar][data-en]').forEach(el=>{
+      const v=el.getAttribute('data-'+lang);
+      if(v!==null) el.innerHTML=v;
+    });
+  }
+  applyDataLang();
+  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setTimeout(applyDataLang,0)));
+  new MutationObserver(applyDataLang).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+})();
+</script>
+</body></html>
