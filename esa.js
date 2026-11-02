@@ -130,6 +130,10 @@
   vInput.addEventListener('input', () => vInput.closest('.field').classList.remove('invalid'));
   // Links such as https://esa-skills26.github.io/?verify=ESA-0001 (for a QR code on the certificate)
   const qv = new URLSearchParams(location.search).get('verify');
+  if (!qv && location.hash === '#verify') {
+    // Arrived from the QR code: land on the form, ready to type
+    setTimeout(() => { $('#verify').scrollIntoView({ behavior: 'auto' }); vInput.focus({ preventScroll: true }); $('.verify-card').classList.add('in', 'spot'); }, 350);
+  }
   if (qv) { vInput.value = qv; setTimeout(() => { $('#verify').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); verify(qv); }, 600); }
 
   /* ---------- Header, nav indicator, progress ---------- */

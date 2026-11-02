@@ -337,3 +337,6 @@ section{position:relative}
 .spinner{width:22px;height:22px;border-radius:50%;border:2.5px solid #333;border-top-color:var(--gold);animation:spin .8s linear infinite}
 @media(max-width:850px){.verify-grid{grid-template-columns:1fr;gap:56px}}
 @media(max-width:600px){.verify{padding:72px 0}.verify-card{padding:40px 20px 22px}}
+
+.verify-card.spot{animation:spot 1.6s var(--ease) .2s 2}
+@keyframes spot{50%{box-shadow:0 0 0 6px rgba(243,174,18,.35),0 40px 90px -35px rgba(0,0,0,.9)}}

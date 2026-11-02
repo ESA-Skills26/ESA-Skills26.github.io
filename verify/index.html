@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verify an ESA Certificate — ESA Academy</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://esa-skills26.github.io/#verify">
+<script>
+/* Stable address printed in the certificate QR code.
+   /verify/            -> the verification section
+   /verify/?id=ESA-001 -> the section with that ID already checked */
+(function(){var q=new URLSearchParams(location.search),id=q.get('id')||q.get('verify');
+location.replace('../'+(id?('?verify='+encodeURIComponent(id)):'?from=qr')+'#verify');})();
+</script>
+<meta http-equiv="refresh" content="0; url=../#verify">
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0b0b;color:#f5f5f2;font:16px Arial,sans-serif}a{color:#f3ae12}</style>
+</head><body><p><a href="../#verify">Verify an ESA certificate · التحقق من شهادة ESA</a></p></body></html>
