@@ -1,0 +1,4 @@
+# trainee spreadsheets must never be published
+*.xlsx
+*.xls
+*.csv

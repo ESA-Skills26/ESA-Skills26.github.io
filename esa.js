@@ -13,6 +13,7 @@
     langBtns.forEach(b => b.classList.toggle('on', b.dataset.lang === l));
     try { localStorage.setItem('esaLang', l); } catch (e) {}
     requestAnimationFrame(moveInk);
+    if (window.__reverify) window.__reverify();
   }
   langBtns.forEach(b => b.addEventListener('click', () => lang(b.dataset.lang)));
   let saved = 'en'; try { saved = localStorage.getItem('esaLang') || 'en'; } catch (e) {}
@@ -74,6 +75,62 @@
   $('.modal-close').onclick = closeModal; $('.modal-backdrop').onclick = closeModal;
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   $('#modalRegister').addEventListener('click', () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; });
+
+  /* ---------- Certificate verification ----------
+     certificates.json holds one encrypted record per certificate.
+     A record is found and opened only with the exact ID, so the file
+     does not expose the list of trainees or IDs. */
+  const vForm = $('#verifyForm'), vOut = $('#verifyResult'), vInput = $('#certId');
+  let certDB = null;
+  const enc = new TextEncoder();
+  const normId = v => v.normalize('NFKC').replace(/[٠-٩]/g, d => d.charCodeAt(0) - 0x660).replace(/[۰-۹]/g, d => d.charCodeAt(0) - 0x6F0).replace(/\s+/g, '').toUpperCase();
+  const sha = async s => new Uint8Array(await crypto.subtle.digest('SHA-256', enc.encode(s)));
+  const hex = b => [...b].map(x => x.toString(16).padStart(2, '0')).join('');
+  const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  async function loadDB() {
+    if (certDB) return certDB;
+    const r = await fetch('certificates.json', { cache: 'no-cache' });
+    if (!r.ok) throw new Error('db');
+    return (certDB = await r.json());
+  }
+  async function lookup(id) {
+    const db = await loadDB();
+    const key = hex(await sha('esa-idx|' + db.salt + '|' + id));
+    const rec = db.records && db.records[key];
+    if (!rec) return null;
+    const raw = b64(rec), iv = raw.slice(0, 12), data = raw.slice(12);
+    const k = await crypto.subtle.importKey('raw', await sha('esa-key|' + db.salt + '|' + id), 'AES-GCM', false, ['decrypt']);
+    const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, k, data);
+    return JSON.parse(new TextDecoder().decode(plain));
+  }
+  function show(state, html) { vOut.innerHTML = html ? `<div class="vr vr-${state}">${html}</div>` : ''; }
+  async function verify(raw) {
+    const ar = root.lang === 'ar', id = normId(raw || '');
+    const field = vInput.closest('.field');
+    if (!id) { field.classList.add('invalid'); vInput.focus(); return; }
+    field.classList.remove('invalid');
+    show('wait', `<span class="spinner"></span><p>${ar ? 'جارٍ التحقق…' : 'Checking…'}</p>`);
+    let rec = null, failed = false;
+    try { rec = await lookup(id); } catch (e) { failed = true; }
+    await new Promise(r => setTimeout(r, reduce ? 0 : 450));
+    if (failed) { show('bad', `<span class="vr-ico"><svg class="ico"><use href="#i-alert"/></svg></span><div><h4>${ar ? 'تعذّر التحقق الآن' : 'Verification is unavailable right now'}</h4><p>${ar ? 'تأكد من اتصالك بالإنترنت وحاول مرة أخرى.' : 'Check your connection and try again.'}</p></div>`); return; }
+    if (!rec) { show('bad', `<span class="vr-ico"><svg class="ico"><use href="#i-alert"/></svg></span><div><h4>${ar ? 'لم نجد شهادة بهذا الرقم' : 'No certificate found for this ID'}</h4><p>${ar ? 'راجع الرقم كما هو مكتوب على الشهادة، أو تواصل معنا على 01032226160.' : 'Check the ID exactly as printed on the certificate, or contact us on 01032226160.'}</p></div>`); return; }
+    const courseAr = rec.course_ar || (courseInfo[rec.course] && courseInfo[rec.course].ar) || rec.course;
+    const rows = [
+      [ar ? 'رقم الشهادة' : 'Certificate ID', `<span dir="ltr">${esc(id)}</span>`],
+      rec.name ? [ar ? 'اسم المتدرب' : 'Trainee', esc(rec.name)] : null,
+      [ar ? 'البرنامج' : 'Program', esc(ar ? courseAr : rec.course)],
+      rec.date ? [ar ? 'تاريخ الإصدار' : 'Issued', `<span dir="ltr">${esc(rec.date)}</span>`] : null
+    ].filter(Boolean).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
+    show('ok', `<span class="vr-ico"><svg class="ico"><use href="#i-check"/></svg></span><div><h4>${ar ? 'رقم صحيح — الشهادة معتمدة' : 'Valid ID — Certificate verified'}</h4><p>${ar ? 'اجتاز المتدرب البرنامج التالي بنجاح في ESA Academy.' : 'This trainee successfully completed the following ESA Academy program.'}</p><dl>${rows}</dl></div>`);
+  }
+  window.__reverify = () => { if (vOut.innerHTML && vInput.value.trim()) verify(vInput.value); };
+  vForm.addEventListener('submit', e => { e.preventDefault(); verify(vInput.value); });
+  vInput.addEventListener('input', () => vInput.closest('.field').classList.remove('invalid'));
+  // Links such as https://esa-skills26.github.io/?verify=ESA-0001 (for a QR code on the certificate)
+  const qv = new URLSearchParams(location.search).get('verify');
+  if (qv) { vInput.value = qv; setTimeout(() => { $('#verify').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); verify(qv); }, 600); }
 
   /* ---------- Header, nav indicator, progress ---------- */
   const header = $('#siteHeader'), bar = $('#progress');

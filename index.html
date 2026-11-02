@@ -47,13 +47,17 @@
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
   <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5"/><path d="M12 16.5h.01"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M3 9.5h18"/><path d="M8 2.5v4"/><path d="M16 2.5v4"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
 </svg>
 
 <div class="progress" aria-hidden="true"><span id="progress"></span></div>
 <header class="site-header" id="siteHeader"><div class="wrap nav">
   <a class="logo" href="#top">esa<small>ACADEMY</small></a>
-  <nav class="links" aria-label="Main"><a href="#top" data-en="Home" data-ar="الرئيسية">Home</a><a href="#programs" data-en="Programs" data-ar="البرامج">Programs</a><a href="#why" data-en="Why ESA" data-ar="لماذا ESA">Why ESA</a><a href="#about" data-en="About" data-ar="عن ESA">About</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a><span class="nav-ink" aria-hidden="true"></span></nav>
+  <nav class="links" aria-label="Main"><a href="#top" data-en="Home" data-ar="الرئيسية">Home</a><a href="#programs" data-en="Programs" data-ar="البرامج">Programs</a><a href="#why" data-en="Why ESA" data-ar="لماذا ESA">Why ESA</a><a href="#about" data-en="About" data-ar="عن ESA">About</a><a href="#verify" data-en="Verify" data-ar="التحقق">Verify</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a><span class="nav-ink" aria-hidden="true"></span></nav>
   <div class="actions"><div class="lang" role="group" aria-label="Language"><button class="on" data-lang="en">EN</button><button data-lang="ar">عربي</button></div><a href="#register" class="btn btn-gold btn-sm" data-en="Register Now →" data-ar="سجل الآن ←">Register Now →</a></div>
 </div></header>
 
@@ -135,6 +139,25 @@
   <div class="about-tags reveal-up"><span><svg class="ico"><use href="#i-grid"/></svg>9 Professional Programs</span><span><svg class="ico"><use href="#i-tools"/></svg>Practical Learning</span><span><svg class="ico"><use href="#i-growth"/></svg>Career-Focused</span><span><svg class="ico"><use href="#i-target"/></svg>Market-Relevant Skills</span></div>
   <div class="about-cta reveal-up"><span class="kicker kicker-gold">EXCELLENCE IN EVERY SKILL</span><h3 data-en="Your Next Skill Can Shape Your Next Move." data-ar="مهارتك القادمة قد تصنع خطوتك القادمة.">Your Next Skill Can Shape Your Next Move.</h3><p data-en="Explore ESA programs and choose the learning track aligned with your professional goal." data-ar="استكشف برامج ESA واختر المسار الأقرب لهدفك المهني.">Explore ESA programs and choose the learning track aligned with your professional goal.</p><div class="hero-buttons center"><a class="btn btn-gold btn-shine" href="#programs" data-en="Explore Programs" data-ar="استكشف البرامج">Explore Programs</a><a class="btn btn-ghost" href="#register" data-en="Reserve Your Seat" data-ar="احجز مقعدك">Reserve Your Seat</a></div></div>
 </div></section>
+
+<section class="verify" id="verify">
+  <div class="wrap verify-grid">
+    <div class="verify-copy reveal-up">
+      <div class="kicker kicker-gold" data-en="CERTIFICATE VERIFICATION" data-ar="التحقق من الشهادات">CERTIFICATE VERIFICATION</div>
+      <h2 class="section-title" data-en="Verify an ESA <span class='gold'>Certificate</span>" data-ar="تحقّق من <span class='gold'>شهادة ESA</span>">Verify an ESA <span class="gold">Certificate</span></h2>
+      <p class="lead" data-en="Enter the certificate ID to confirm that it was issued by ESA Academy and to see the program completed." data-ar="أدخل رقم الشهادة (ID) للتأكد من أنها صادرة من ESA Academy ومعرفة البرنامج الذي اجتازه المتدرب.">Enter the certificate ID to confirm that it was issued by ESA Academy and to see the program completed.</p>
+      <ul class="reg-points"><li><svg class="ico"><use href="#i-badge"/></svg><span data-en="Instant check for employers and trainees" data-ar="تحقق فوري لجهات العمل والمتدربين">Instant check for employers and trainees</span></li><li><svg class="ico"><use href="#i-shield"/></svg><span data-en="Trainee data stays protected" data-ar="بيانات المتدربين محمية">Trainee data stays protected</span></li></ul>
+    </div>
+    <div class="verify-card reveal-up">
+      <span class="verify-seal" aria-hidden="true"><svg class="ico"><use href="#i-badge"/></svg></span>
+      <form id="verifyForm" class="verify-form" autocomplete="off" novalidate>
+        <label class="field"><svg class="ico"><use href="#i-search"/></svg><input id="certId" placeholder=" " spellcheck="false" autocapitalize="characters" dir="ltr"><span data-en="Enter your ID" data-ar="أدخل رقم الـ ID">Enter your ID</span></label>
+        <button class="btn btn-gold btn-shine" type="submit" id="verifyBtn"><span data-en="Verify Certificate" data-ar="تحقق من الشهادة">Verify Certificate</span></button>
+      </form>
+      <div id="verifyResult" class="verify-result" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
 
 <section class="register" id="register">
   <div class="register-bg" aria-hidden="true"></div>
