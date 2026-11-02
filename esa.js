@@ -132,9 +132,11 @@
   const qv = new URLSearchParams(location.search).get('verify');
   if (!qv && location.hash === '#verify') {
     // Arrived from the QR code: land on the form, ready to type
-    setTimeout(() => { $('#verify').scrollIntoView({ behavior: 'auto' }); vInput.focus({ preventScroll: true }); $('.verify-card').classList.add('in', 'spot'); }, 350);
+    const land = () => { const y = $('#verify').getBoundingClientRect().top + scrollY - 70; window.scrollTo({ top: y, behavior: 'instant' }); };
+    land(); setTimeout(() => { land(); vInput.focus({ preventScroll: true }); $('.verify-card').classList.add('in', 'spot'); }, 350);
+    addEventListener('load', () => setTimeout(land, 50), { once: true });
   }
-  if (qv) { vInput.value = qv; setTimeout(() => { $('#verify').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); verify(qv); }, 600); }
+  if (qv) { vInput.value = qv; setTimeout(() => { window.scrollTo({ top: $('#verify').getBoundingClientRect().top + scrollY - 70, behavior: 'instant' }); verify(qv); }, 400); }
 
   /* ---------- Header, nav indicator, progress ---------- */
   const header = $('#siteHeader'), bar = $('#progress');
