@@ -4,183 +4,166 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ESA Academy — Excellence in Every Skill</title>
 <meta name="description" content="ESA Academy professional programs for practical, future-ready skills.">
-<style>
-:root{--bg:#050505;--panel:#0b0d10;--gold:#f5b82e;--gold2:#ffd36a;--text:#f7f7f4;--muted:#aaa;--line:#29251c}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;background:#050505;color:var(--text);font-family:Inter,Arial,sans-serif}a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 28px}
-header{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.88);backdrop-filter:blur(16px);border-bottom:1px solid #191919}.nav{height:78px;display:flex;align-items:center;gap:28px}.logo{font-weight:950;font-size:28px;color:var(--gold);letter-spacing:-2px}.logo small{display:block;font-size:8px;letter-spacing:4px;color:#ddd;text-align:center}.links{display:flex;gap:28px;margin:auto;font-size:14px}.actions{display:flex;align-items:center;gap:12px}.lang{display:flex;border:1px solid #333;border-radius:20px;padding:3px}.lang button{background:none;color:#aaa;border:0;padding:6px 9px;cursor:pointer;border-radius:15px}.lang button.on{color:#111;background:var(--gold)}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--gold);border-radius:10px;padding:14px 22px;font-weight:800}.btn.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#111}
-.hero{min-height:620px;position:relative;overflow:hidden;background:#050505 url('hero-eagle.webp') center right/cover no-repeat}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0,rgba(5,5,5,.8) 36%,rgba(5,5,5,.12) 72%),radial-gradient(circle at 85% 55%,rgba(255,185,45,.35),transparent 22%);pointer-events:none}.hero-art{display:none}.hero-inner{position:relative;z-index:2;padding:70px 0 38px;max-width:570px}.eyebrow{letter-spacing:5px;font-size:12px}.hero h1{font-size:68px;line-height:.92;margin:22px 0}.gold{color:var(--gold)}.lead{color:#d3d3cf;line-height:1.7;font-size:17px;max-width:520px}.hero-buttons{display:flex;gap:14px;margin:28px 0}.stats{display:flex;gap:0;margin-top:38px}.stat{padding:0 30px;border-right:1px solid #71571f}.stat:first-child{padding-left:0}.stat b{display:block;font-size:18px}.stat span{font-size:12px;color:#aaa}
-section{padding:70px 0;border-top:1px solid #161616}.section-top{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.kicker{letter-spacing:4px;font-size:11px;color:#aaa}.section-title{font-size:38px;margin:8px 0 0}.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.course{min-height:250px;border:1px solid #2b2b2b;border-radius:14px;overflow:hidden;position:relative;background:linear-gradient(145deg,#18130b,#070707 60%);padding:160px 18px 18px}.course:before{content:"";position:absolute;inset:0 0 92px;background-image:linear-gradient(to bottom,rgba(0,0,0,.02),rgba(0,0,0,.35)),var(--course-img);background-size:cover;background-position:center;transition:transform .45s ease}.course:hover:before{transform:scale(1.04)}.course:nth-child(1){--course-img:url('data-analysis.webp')}.course:nth-child(2){--course-img:url('cybersecurity.webp')}.course:nth-child(3){--course-img:url('graphic-design.webp')}.course:nth-child(4){--course-img:url('learning-development.webp')}.course:nth-child(5){--course-img:url('performance-management.webp')}.course:nth-child(6){--course-img:url('healthcare-facilities.webp')}.course:nth-child(7){--course-img:url('digital-marketing.webp')}.course:nth-child(8){--course-img:url('networks.webp')}.course:nth-child(9){--course-img:url('infection-control.webp')}.course .icon{display:none}.course h3{position:relative;margin:0 0 7px;font-size:17px}.course p{position:relative;margin:0;color:#bbb;font-size:13px}.why-grid{display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:30px;align-items:center}.why h2{font-size:38px;line-height:.95}.benefit{text-align:center}.circle{width:62px;height:62px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;font-size:27px}.benefit p{font-size:12px;color:#aaa}
-.register{position:relative;background:#050505 url('register-visual.webp') center/cover no-repeat}.register:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,.38),rgba(5,5,5,.55) 48%,rgba(5,5,5,.88))}.register-grid{position:relative;z-index:1}.register-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}.register-copy h2{font-size:58px;line-height:.95;margin:14px 0}.form{background:#0b0d10;border:1px solid #272727;border-radius:16px;padding:26px}.form h3{font-size:23px;margin:0 0 5px}.form p{margin:0 0 20px;color:#999}.form input,.form select{width:100%;background:#12151a;color:#eee;border:1px solid #262a30;border-radius:7px;padding:14px;margin:0 0 12px;outline:none}.form button{width:100%;border:0;cursor:pointer}.note{font-size:10px;color:#777;margin-top:10px}.contact{display:flex;justify-content:center;gap:25px;color:#999;font-size:13px;padding:24px;border-top:1px solid #171717}
-@media(max-width:850px){.links{display:none}.nav{gap:12px}.actions{margin-left:auto}.hero h1{font-size:48px}.hero-art{opacity:.45;width:75%}.courses{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr 1fr}.why{grid-column:1/-1}.register-grid{grid-template-columns:1fr}.stats{flex-wrap:wrap;gap:18px}.stat{border:0;padding:0}.section-title{font-size:31px}}
-@media(max-width:560px){.wrap{padding:0 18px}.nav .btn{display:none}.courses{grid-template-columns:1fr}.hero{min-height:650px}.hero h1{font-size:45px}.hero-inner{padding-top:55px}.why-grid{grid-template-columns:1fr 1fr}.register-copy h2{font-size:45px}}
-#about{scroll-margin-top:92px}\n</style><style>
-/* final visual composition */
-.hero{min-height:680px;background:#050505!important}
-.hero-art{display:block!important;position:absolute;inset:0;width:auto!important;height:auto!important;opacity:1!important;background:url('hero-eagle.webp') 68% 42%/cover no-repeat}
-.hero:after{z-index:1;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.94) 29%,rgba(5,5,5,.46) 52%,rgba(5,5,5,.03) 76%),linear-gradient(0deg,#050505 0%,transparent 25%)}
-.hero-inner{padding:92px 0 54px;max-width:560px}
-.course{aspect-ratio:1.18/1;min-height:0;padding:0!important;display:flex;align-items:flex-end}
-.course:before{inset:0!important;background-image:var(--course-img)!important;background-size:cover!important;background-position:center!important}
-.course:after{content:"";position:absolute;inset:42% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.97));z-index:1}
-.course h3,.course p{z-index:2;margin-left:18px;margin-right:18px}.course h3{margin-bottom:36px}.course p{position:absolute;bottom:17px;left:0;right:0}
-.register{min-height:650px;background:#050505 url('register-visual.webp') center/cover no-repeat!important}
-.register:before{z-index:0;background:linear-gradient(90deg,rgba(5,5,5,.18),rgba(5,5,5,.4) 48%,rgba(5,5,5,.92) 80%)}
-.register-grid{z-index:2}
-@media(max-width:850px){.hero{min-height:760px}.hero-art{background-position:62% top!important}.hero:after{background:linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.35) 35%,rgba(5,5,5,.96) 66%,#050505 92%)}.hero-inner{padding-top:390px;max-width:100%}.register:before{background:rgba(5,5,5,.68)}}
-@media(max-width:560px){.hero{min-height:790px}.hero-inner{padding-top:405px}.course{aspect-ratio:1.12/1}}
-</style>
-<style>
-.course{cursor:pointer}.course:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.course:after{transition:.35s}.course:hover:after{inset:28% 0 0}.course-more{position:absolute;z-index:3;right:16px;top:15px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#050505aa;border:1px solid #dca72f;color:var(--gold);font-weight:900;opacity:0;transform:translateY(-6px);transition:.3s}.course:hover .course-more{opacity:1;transform:none}
-.course-modal{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:22px;visibility:hidden;opacity:0;transition:opacity .32s ease,visibility .32s}.course-modal.open{visibility:visible;opacity:1}.modal-backdrop{position:absolute;inset:0;background:#000c;backdrop-filter:blur(10px)}.modal-card{position:relative;width:min(1120px,96vw);max-height:88vh;overflow:auto;background:linear-gradient(145deg,#11100d,#08090b 55%);border:1px solid #5b451c;border-radius:20px;box-shadow:0 30px 120px #000,0 0 60px #dca72f18;transform:translateY(28px) scale(.97);opacity:0;transition:.38s cubic-bezier(.2,.8,.2,1)}.course-modal.open .modal-card{transform:none;opacity:1}.modal-hero{height:230px;position:relative;background-position:center;background-size:cover}.modal-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0a0a09 2%,transparent 70%)}.modal-close{position:absolute;z-index:4;right:16px;top:16px;width:40px;height:40px;border-radius:50%;border:1px solid #ffffff33;background:#080808cc;color:#fff;font-size:22px;cursor:pointer}.modal-body{padding:0 32px 32px;position:relative;margin-top:-28px;z-index:2}.modal-body h2{font-size:52px;line-height:1.05;margin:0 0 16px}.modal-intro{color:#ddd;line-height:1.65;margin:0 0 30px;font-size:25px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.detail{background:#111318;border:1px solid #24272d;border-radius:12px;padding:18px}.detail h4{color:var(--gold);margin:0 0 18px;font-size:30px;line-height:1.2}.detail ul{margin:0;padding-inline-start:28px;color:#eee;line-height:1.75;font-size:25px}.market{grid-column:1/-1;background:linear-gradient(120deg,#17130b,#0d0e11);border-color:#493816}.modal-cta{display:flex;gap:10px;margin-top:20px}.modal-cta .btn{cursor:pointer}.pulse{animation:pulse 2.2s infinite}@keyframes pulse{0%,100%{box-shadow:0 0 0 0 #e8ad3233}50%{box-shadow:0 0 0 12px transparent}}@media(max-width:650px){.modal-hero{height:190px}.modal-body{padding:0 18px 22px}.modal-body h2{font-size:25px}.detail-grid{grid-template-columns:1fr}.market{grid-column:auto}.modal-card{max-height:91vh}.course-more{opacity:1;transform:none}}
-</style><style>
-.course{aspect-ratio:auto!important;min-height:0!important;padding:0!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;background:#090909!important}
-.course:before,.course:after{display:none!important}
-.course-img{width:100%;height:auto!important;object-fit:contain!important;object-position:center;display:block;background:#090909;transition:transform .4s ease}
-.course:hover .course-img{transform:scale(1.01)}
-.course-info{padding:18px 20px 20px;background:linear-gradient(180deg,#111,#090909);min-height:92px}
-.course-info h3,.course-info p{position:static!important;margin-left:0!important;margin-right:0!important}
-.course-info h3{margin:0 0 7px!important}.course-info p{margin:0!important}
-</style>
-<style>
-.about-era{padding:84px 0;background:radial-gradient(circle at 15% 10%,rgba(243,182,52,.10),transparent 28%),linear-gradient(180deg,#050706,#090d0b);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.about-kicker{color:var(--gold2);letter-spacing:.22em;text-transform:uppercase;font-weight:800;font-size:.8rem}
-.about-title{font-size:clamp(2.5rem,5vw,4.7rem);line-height:1;margin:12px 0 20px;max-width:900px}
-.about-intro{font-size:1.08rem;line-height:1.9;color:var(--muted);max-width:850px}
-.about-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
-.about-card{position:relative;overflow:hidden;min-height:240px;padding:24px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(255,217,120,.08),rgba(255,255,255,.02));transition:.35s ease}
-.about-card:hover{transform:translateY(-7px);border-color:rgba(243,182,52,.48);box-shadow:0 20px 45px rgba(0,0,0,.3)}
-.about-num{font-size:.8rem;color:var(--gold2);letter-spacing:.18em}
-.about-card h3{font-size:1.3rem;margin:38px 0 10px}
-.about-card p{color:var(--muted);line-height:1.75;margin:0}
-.esa-standard{margin-top:24px;padding:34px;border:1px solid rgba(243,182,52,.28);border-radius:26px;background:linear-gradient(110deg,rgba(243,182,52,.12),rgba(255,255,255,.025));text-align:center}
-.esa-standard small{color:var(--gold2);font-weight:800;letter-spacing:.2em}
-.esa-standard h3{font-size:clamp(1.7rem,3.4vw,3rem);line-height:1.25;margin:12px auto;max-width:900px}
-.esa-standard p{color:var(--muted);margin:0}
-.about-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:28px 0}
-.about-tags span{padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.035);font-size:.9rem}
-.about-cta{text-align:center;margin-top:30px}.about-cta h3{font-size:clamp(1.7rem,3vw,2.6rem);margin:0 0 18px}
-@media(max-width:900px){.about-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.about-grid{grid-template-columns:1fr}.about-era{padding:58px 0}}
-</style>
-<style>
-.about-era{padding:86px 0;background:radial-gradient(circle at 15% 10%,rgba(243,182,52,.10),transparent 28%),linear-gradient(180deg,#050706,#090d0b);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.about-kicker{color:var(--gold2);letter-spacing:.22em;text-transform:uppercase;font-weight:800;font-size:.8rem}
-.about-title{font-size:clamp(2.5rem,5vw,4.7rem);line-height:1;margin:12px 0 20px;max-width:920px}
-.about-intro{font-size:1.08rem;line-height:1.9;color:var(--muted);max-width:900px}
-.about-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
-.about-card{min-height:240px;padding:24px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(255,217,120,.08),rgba(255,255,255,.02));transition:.35s ease}
-.about-card:hover{transform:translateY(-7px);border-color:rgba(243,182,52,.48);box-shadow:0 20px 45px rgba(0,0,0,.3)}
-.about-num{font-size:.8rem;color:var(--gold2);letter-spacing:.18em}.about-card h3{font-size:1.3rem;margin:38px 0 10px}.about-card p{color:var(--muted);line-height:1.75;margin:0}
-.esa-standard{margin-top:24px;padding:34px;border:1px solid rgba(243,182,52,.28);border-radius:26px;background:linear-gradient(110deg,rgba(243,182,52,.12),rgba(255,255,255,.025));text-align:center}
-.esa-standard small{color:var(--gold2);font-weight:800;letter-spacing:.2em}.esa-standard h3{font-size:clamp(1.7rem,3.4vw,3rem);line-height:1.25;margin:12px auto;max-width:900px}.esa-standard p{color:var(--muted);margin:0}
-.about-values{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:28px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden}.about-values>div{background:#080b09;padding:24px;display:flex;flex-direction:column;gap:9px;min-height:170px}.about-values b{color:var(--gold2);font-size:.78rem;letter-spacing:.18em}.about-values strong{font-size:1.18rem}.about-values span{color:var(--muted);line-height:1.65;font-size:.94rem}
-.about-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:28px 0}.about-tags span{padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.035);font-size:.9rem}.about-cta{text-align:center;margin-top:34px}.about-cta h3{font-size:clamp(1.7rem,3vw,2.6rem);margin:10px 0}.about-cta p{color:var(--muted);max-width:650px;margin:0 auto 18px;line-height:1.8}
-@media(max-width:900px){.about-grid,.about-values{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.about-grid,.about-values{grid-template-columns:1fr}.about-era{padding:58px 0}}
-</style>
-<style>
-.course{overflow:hidden!important;background:#090909!important}
-.course-img{width:100%;aspect-ratio:16/10;object-fit:cover!important;object-position:center;display:block;background:#0a0a0a;filter:contrast(1.04) saturate(1.04);transition:transform .45s ease,filter .45s ease}
-.course:hover .course-img{transform:scale(1.035);filter:contrast(1.08) saturate(1.08)}
-.course-info{padding:18px 20px 22px}
-@media(max-width:560px){.course-img{aspect-ratio:16/9}}
-</style><style id="esa-program-grid-v2">
-#programs{padding:72px 0 86px;background:radial-gradient(circle at 50% 20%,rgba(245,184,46,.055),transparent 30%),#050505}
-#programs .wrap{max-width:1480px}
-#programs .section-top{margin-bottom:28px}
-#programs .kicker{font-size:14px;letter-spacing:4px;color:#f4f4f1}
-#programs .section-title{font-size:clamp(38px,4.4vw,64px);font-weight:900;letter-spacing:-2px;line-height:.98}
-.courses{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important}
-.course{position:relative!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;min-height:0!important;aspect-ratio:auto!important;padding:0!important;border:1px solid #383838!important;border-radius:16px!important;background:linear-gradient(180deg,#0d0f11,#08090a)!important;overflow:hidden!important;box-shadow:0 18px 55px rgba(0,0,0,.25);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
-.course:hover{transform:translateY(-5px);border-color:#8b6927!important;box-shadow:0 24px 70px rgba(0,0,0,.42),0 0 30px rgba(245,184,46,.06)}
-.course:before,.course:after{display:none!important}
-.course-img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:1.62/1!important;object-fit:cover!important;object-position:center!important;margin:0!important;background:#101010;filter:contrast(1.08) saturate(1.06);transform:translateZ(0);transition:transform .45s ease,filter .45s ease}
-.course:hover .course-img{transform:scale(1.025);filter:contrast(1.11) saturate(1.1)}
-.course .icon{display:block!important;position:static!important;color:var(--gold);font-size:27px;margin:19px 20px 8px!important;height:28px}
-.course h3{position:static!important;margin:0 20px 8px!important;font-size:20px!important;line-height:1.25;font-weight:800}
-.course p{position:static!important;margin:0 56px 22px 20px!important;color:#c7c7c7!important;font-size:14px!important;line-height:1.55!important;min-height:44px}
-.course-more{opacity:1!important;transform:none!important;top:auto!important;right:18px!important;bottom:19px!important;width:38px!important;height:38px!important;border-color:var(--gold)!important;background:#0a0a0a!important;font-size:0!important}
-.course-more:after{content:"→";font-size:21px;color:var(--gold)}
-.course:nth-child(n+9){display:none!important}
-@media(max-width:1100px){.courses{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:600px){#programs .wrap{padding:0 16px}.courses{grid-template-columns:1fr!important}.course-img{aspect-ratio:16/9!important}.course h3{font-size:19px!important}}
-</style><style id="esa-course-fit-fix">
-/* Show each program artwork in full without cropping */
-.course-img{
-  width:100%!important;
-  height:auto!important;
-  aspect-ratio:1.62/1!important;
-  object-fit:contain!important;
-  object-position:center!important;
-  background:#08090a!important;
-  padding:0!important;
-}
-/* More balanced course detail modal typography */
-.modal-body h2{font-size:clamp(27px,3vw,40px)!important;line-height:1.12!important;margin-bottom:12px!important}
-.modal-intro{font-size:17px!important;line-height:1.65!important;margin-bottom:22px!important}
-.detail h4{font-size:18px!important;line-height:1.25!important;margin-bottom:11px!important}
-.detail ul{font-size:15px!important;line-height:1.7!important;padding-inline-start:21px!important}
-.detail{padding:16px!important}
-.modal-body{padding:0 28px 28px!important}
-@media(max-width:650px){
- .modal-body h2{font-size:25px!important}
- .modal-intro{font-size:15px!important}
- .detail h4{font-size:16px!important}
- .detail ul{font-size:14px!important}
- .modal-body{padding:0 17px 20px!important}
- .course-img{aspect-ratio:auto!important;max-height:none!important}
-}
-</style><style id="esa-course-full-image-fix">
-/* Preserve the complete artwork vertically and horizontally */
-.course-img{
-  width:100%!important;
-  height:auto!important;
-  aspect-ratio:auto!important;
-  max-height:none!important;
-  object-fit:contain!important;
-  object-position:center center!important;
-  display:block!important;
-  background:#08090a!important;
-  margin:0!important;
-}
-</style><style id="esa-mobile-identity-final">
-/* ESA wordmark emphasis */
-header .logo{font-size:40px!important;line-height:.82!important;letter-spacing:-2.5px!important}
-header .logo small{font-size:8px!important;letter-spacing:3.2px!important;margin-top:7px!important}
-
-/* Mobile only: the actual hero image lives on .hero, so show that source in full */
-@media (max-width:700px){
-  header .logo{font-size:38px!important}
-  .hero{
-    min-height:0!important;
-    padding-top:min(78vw,560px)!important;
-    background-image:url('hero-eagle.webp')!important;
-    background-size:contain!important;
-    background-position:center top!important;
-    background-repeat:no-repeat!important;
-    overflow:visible!important;
-  }
-  .hero:after{
-    background:linear-gradient(180deg,rgba(5,5,5,0) 0%,rgba(5,5,5,.02) 52%,#050505 76%,#050505 100%)!important;
-    pointer-events:none!important;
-  }
-  .hero-art{display:none!important}
-  .hero>.wrap{position:relative!important;z-index:2!important}
-  .hero-inner{min-height:0!important;padding:10px 0 48px!important}
-}
-</style></head>
+<meta name="theme-color" content="#0b0b0b">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Changa:wght@500;600;700&display=swap">
+<link rel="preload" as="image" href="hero-eagle.webp">
+<link rel="stylesheet" href="esa.css">
+</head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#">esa<small>ACADEMY</small></a><nav class="links"><a href="#" data-en="Home" data-ar="الرئيسية">Home</a><a href="#programs" data-en="Programs" data-ar="البرامج">Programs</a><a href="#why" data-en="Why ESA" data-ar="لماذا ESA">Why ESA</a><a href="#about" data-en="About" data-ar="عن ESA">About</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></nav><div class="actions"><div class="lang"><button class="on" data-lang="en">EN</button><button data-lang="ar">عربي</button></div><a href="#register" class="btn" data-en="Register Now →" data-ar="سجل الآن ←">Register Now →</a></div></div></header>
-<main>
-<section class="hero"><div class="hero-art" aria-hidden="true"></div><div class="wrap"><div class="hero-inner"><div class="eyebrow" data-en="SKILLS TODAY · A BRIGHTER TOMORROW" data-ar="مهارات اليوم · لمستقبل أكثر إشراقًا">SKILLS TODAY · A BRIGHTER TOMORROW</div><h1 data-en="IT’S THE <span class='gold'>ESA ERA</span>" data-ar="إنه عصر <span class='gold'>ESA</span>">IT’S THE <span class="gold">ESA ERA</span></h1><div class="eyebrow">LEARN · BUILD · GROW · LEAD</div><p class="lead" data-en="Practical, future-ready skills designed for real opportunities in Egypt, the Gulf, and beyond." data-ar="مهارات عملية للمستقبل مصممة لفرص حقيقية في مصر والخليج وما بعدهما.">Practical, future-ready skills designed for real opportunities in Egypt, the Gulf, and beyond.</p><div class="hero-buttons"><a class="btn gold" href="#register" data-en="Reserve Your Seat →" data-ar="احجز مقعدك ←">Reserve Your Seat →</a><a class="btn" href="#programs" data-en="Explore Programs" data-ar="استكشف البرامج">Explore Programs</a></div><div class="stats"><div class="stat"><b>9</b><span data-en="Programs" data-ar="برامج">Programs</span></div><div class="stat"><b data-en="Expert" data-ar="خبراء">Expert</b><span data-en="Instructors" data-ar="مدربون">Instructors</span></div><div class="stat"><b data-en="Practical" data-ar="عملية">Practical</b><span data-en="Projects" data-ar="مشروعات">Projects</span></div><div class="stat"><b data-en="Career" data-ar="دعم">Career</b><span data-en="Support" data-ar="مهني">Support</span></div></div></div></div></section>
-<section id="programs"><div class="wrap"><div class="section-top"><div><div class="kicker" data-en="EXPLORE OUR PROGRAMS" data-ar="استكشف برامجنا">EXPLORE OUR PROGRAMS</div><h2 class="section-title" data-en="SKILLS FOR WHAT’S <span class='gold'>NEXT</span>" data-ar="مهارات لما هو <span class='gold'>قادم</span>">SKILLS FOR WHAT’S <span class="gold">NEXT</span></h2></div></div><div class="courses">
-<article class="course" tabindex="0" role="button"><img class="course-img" src="data-analysis.webp" alt="" loading="lazy" decoding="async"><span class="course-more">+</span><div class="icon">▥</div><h3 data-en="Data Analysis" data-ar="تحليل البيانات">Data Analysis</h3><p data-en="Turn data into real decisions." data-ar="حوّل البيانات إلى قرارات حقيقية.">Turn data into real decisions.</p></article><article class="course" tabindex="0" role="button"><img class="course-img" src="cybersecurity.webp" alt="" loading="lazy" decoding="async"><span class="course-more">+</span><div class="icon">⌾</div><h3 data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</h3><p data-en="Protect. Detect. Stay ahead." data-ar="احمِ واكتشف وابقَ في المقدمة.">Protect. Detect. Stay ahead.</p></article><article class="course" tabindex="0" role="button"><img class="course-img" src="graphic-design.webp" alt="" loading="lazy" decoding="async"><span class="course-more">+</span><div class="icon">✦</div><h3 data-en="Graphic Design" data-ar="التصميم الجرافيكي">Graphic Design</h3><p data-en="Bring ideas to life." data-ar="حوّل الأفكار إلى واقع.">Bring ideas to life.</p></article><article class="course" tabindex="0" role="button"><img class="course-img" src="learning-development.webp" alt="" loading="lazy" decoding="async"><span class="course-more">+</span><div class="icon">♟</div><h3 data-en="Learning & Development" data-ar="التعلم والتطوير">Learning & Development</h3><p data-en="Develop people. Build performance." data-ar="طوّر الأفراد وابنِ الأداء.">Develop people. Build performance.</p></article><article class="course" tabindex="0" role="button"><img class="course-img" src="performance-management.webp" alt="" loading="lazy" decoding="async"><span class="course-more">+</span><div class="icon">◉</div><h3 data-en="Performance Management System" data-ar="نظام إدارة الأداء">Performance Management System</h3><p data-en="Set goals. Drive results." data-ar="حدد الأهداف وحقق النتائج.">Set goals. Drive results.</p></article><article class="course" tabindex="0" role="button"><img class="course-img" src="healthcare-facilities.webp" alt="" loading="lazy" decoding="async"><span class="course-more">+</span><div class="icon">✚</div><h3 data-en="Healthcare Facility Management" data-ar="إدارة المنشآت الصحية">Healthcare Facility Management</h3><p data-en="Manage. Improve. Make an impact." data-ar="أدِر وطوّر واصنع أثرًا.">Manage. Improve. Make an impact.</p></article><article class="course" tabindex="0" role="button"><img class="course-img" src="digital-marketing.webp" alt="" loading="lazy" decoding="async"><span class="course-more">+</span><div class="icon">▶</div><h3 data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</h3><p data-en="Reach. Engage. Grow." data-ar="تواصل وتفاعل وانمُ.">Reach. Engage. Grow.</p></article><article class="course" tabindex="0" role="button"><img class="course-img" src="networks.webp" alt="" loading="lazy" decoding="async"><span class="course-more">+</span><div class="icon">◎</div><h3 data-en="Networking & IT" data-ar="الشبكات">Networking & IT</h3><p data-en="Build the backbone of tomorrow." data-ar="ابنِ البنية التحتية للغد.">Build the backbone of tomorrow.</p></article><article class="course" tabindex="0" role="button"><img class="course-img" src="infection-control.webp" alt="" loading="lazy" decoding="async"><span class="course-more">+</span><div class="icon">✚</div><h3 data-en="Infection Control" data-ar="مكافحة العدوى">Infection Control</h3><p data-en="Prevention. Safety. Better Healthcare." data-ar="وقاية وأمان ورعاية صحية أفضل.">Prevention. Safety. Better Healthcare.</p></article>
-</div></div></section>
-<section id="why"><div class="wrap why-grid"><div class="why"><div class="kicker">WHY ESA</div><h2><span class="gold">MORE</span> THAN<br>JUST COURSES</h2></div><div class="benefit"><div class="circle">♙</div><b data-en="Expert Instructors" data-ar="مدربون خبراء">Expert Instructors</b><p data-en="Industry experience" data-ar="خبرة عملية">Industry experience</p></div><div class="benefit"><div class="circle">⚙</div><b data-en="Hands-on Learning" data-ar="تعلم عملي">Hands-on Learning</b><p data-en="Real world projects" data-ar="مشروعات واقعية">Real world projects</p></div><div class="benefit"><div class="circle">↗</div><b data-en="Career Support" data-ar="دعم مهني">Career Support</b><p data-en="Guidance & opportunities" data-ar="توجيه وفرص">Guidance & opportunities</p></div><div class="benefit"><div class="circle">◎</div><b data-en="Regional Relevance" data-ar="ملاءمة إقليمية">Regional Relevance</b><p data-en="Tailored for Egypt & Gulf" data-ar="مصمم لمصر والخليج">Tailored for Egypt & Gulf</p></div></div></section>
-<section class="about-era" id="about"><div class="wrap"><span class="about-kicker" data-en="ABOUT ESA" data-ar="عن ESA">ABOUT ESA</span><h2 class="about-title" data-en="We Turn Learning Into <span class='gold'>Real Capability.</span>" data-ar="نحوّل التعلّم إلى <span class='gold'>قدرة حقيقية.</span>">We Turn Learning Into <span class="gold">Real Capability.</span></h2><p class="about-intro" data-en="ESA — Excellence in Every Skill is a professional learning and development academy built to bridge the gap between theoretical knowledge and real-world performance. We design practical, career-focused learning experiences that help learners and professionals build applicable skills, strengthen their capabilities, and prepare for an evolving job market." data-ar="ESA — Excellence in Every Skill هي أكاديمية للتعليم والتطوير المهني، بُنيت لسد الفجوة بين المعرفة النظرية ومتطلبات الأداء الحقيقي. نصمم تجارب تعلم عملية وموجهة للمسار المهني تساعد المتعلمين والمهنيين على بناء مهارات قابلة للتطبيق والاستعداد لسوق عمل متغير.">ESA — Excellence in Every Skill is a professional learning and development academy built to bridge the gap between theoretical knowledge and real-world performance.</p><div class="about-grid"><article class="about-card"><span class="about-num">01 / VISION</span><h3 data-en="Our Vision" data-ar="رؤيتنا">Our Vision</h3><p data-en="To contribute to a generation equipped with future-ready skills and the ability to turn knowledge into meaningful professional performance and impact." data-ar="أن نساهم في بناء جيل يمتلك مهارات المستقبل والقدرة على تحويل المعرفة إلى أداء وتأثير مهني حقيقي.">Future-ready skills and meaningful impact.</p></article><article class="about-card"><span class="about-num">02 / MISSION</span><h3 data-en="Our Mission" data-ar="رسالتنا">Our Mission</h3><p data-en="To deliver practical, market-relevant professional development programs that combine knowledge, application, projects, and outcome-focused thinking." data-ar="تقديم برامج تطوير مهني عملية ومرتبطة بالسوق تجمع بين المعرفة والتطبيق والمشروعات والتركيز على النتائج.">Practical, market-relevant professional development.</p></article><article class="about-card"><span class="about-num">03 / APPROACH</span><h3>Learn → Apply → Perform</h3><p data-en="Our approach moves from understanding to application and ultimately to real-world performance." data-ar="منهجيتنا تبدأ بالفهم، ثم التطبيق، وتنتهي بالقدرة على استخدام المهارة في مواقف العمل الحقيقية.">Understanding to application to performance.</p></article><article class="about-card"><span class="about-num">04 / RELEVANCE</span><h3 data-en="Market Relevance" data-ar="مرتبطون بالسوق">Market Relevance</h3><p data-en="Programs designed around professionally relevant skills and regional needs, with a global perspective." data-ar="برامج مصممة حول المهارات المطلوبة واحتياجات السوق في المنطقة بمنظور عالمي.">Professionally relevant skills with a global perspective.</p></article></div><div class="esa-standard"><small>THE ESA STANDARD</small><h3 data-en="Every ESA program must answer one question:<br><span class='gold'>What will you be able to DO after completing it?</span>" data-ar="كل برنامج في ESA لازم يجاوب على سؤال واحد:<br><span class='gold'>ماذا ستستطيع أن تفعل بعد إتمامه؟</span>">Every ESA program must answer one question:<br><span class="gold">What will you be able to DO after completing it?</span></h3><p data-en="We focus on application, clarity, market relevance, and meaningful learner outcomes." data-ar="نركز على التطبيق والوضوح والارتباط بسوق العمل والنتائج الحقيقية للمتعلم.">Application, clarity, relevance and outcomes.</p></div><div class="about-values"><div><b>01</b><strong data-en="Excellence" data-ar="التميّز">Excellence</strong><span data-en="Raising the standard of the learning experience." data-ar="رفع معيار الجودة في تجربة التعلم.">Raising the standard.</span></div><div><b>02</b><strong data-en="Application" data-ar="التطبيق">Application</strong><span data-en="Knowledge becomes stronger when it becomes practice." data-ar="المعرفة تصبح أقوى عندما تتحول إلى ممارسة.">Knowledge into practice.</span></div><div><b>03</b><strong data-en="Growth" data-ar="التطور">Growth</strong><span data-en="Continuous learning toward stronger capability." data-ar="تعلم مستمر لبناء قدرات أقوى.">Continuous learning.</span></div><div><b>04</b><strong data-en="Impact" data-ar="الأثر">Impact</strong><span data-en="Outcomes learners can use professionally." data-ar="نتائج يمكن للمتعلم استخدامها مهنيًا.">Professional outcomes.</span></div></div><div class="about-tags"><span>9 Professional Programs</span><span>Practical Learning</span><span>Career-Focused</span><span>Market-Relevant Skills</span></div><div class="about-cta"><span class="about-kicker">EXCELLENCE IN EVERY SKILL</span><h3 data-en="Your Next Skill Can Shape Your Next Move." data-ar="مهارتك القادمة قد تصنع خطوتك القادمة.">Your Next Skill Can Shape Your Next Move.</h3><p data-en="Explore ESA programs and choose the learning track aligned with your professional goal." data-ar="استكشف برامج ESA واختر المسار الأقرب لهدفك المهني.">Explore ESA programs and choose the learning track aligned with your professional goal.</p><div class="hero-buttons" style="justify-content:center"><a class="btn gold" href="#programs" data-en="Explore Programs" data-ar="استكشف البرامج">Explore Programs</a><a class="btn" href="#register" data-en="Reserve Your Seat" data-ar="احجز مقعدك">Reserve Your Seat</a></div></div></div></section><section class="register" id="register"><div class="wrap register-grid"><div class="register-copy"><div class="kicker">A HIGHER TOMORROW</div><h2 data-en="RESERVE<br><span class='gold'>YOUR SEAT</span>" data-ar="احجز<br><span class='gold'>مقعدك</span>">RESERVE<br><span class="gold">YOUR SEAT</span></h2><p class="lead" data-en="Be part of a new era of skills, opportunities, and real impact." data-ar="كن جزءًا من عصر جديد من المهارات والفرص والتأثير الحقيقي.">Be part of a new era of skills, opportunities, and real impact.</p></div><form class="form" id="leadForm"><h3 data-en="Register Now" data-ar="سجل الآن">Register Now</h3><p data-en="Take the first step towards your future" data-ar="خذ أول خطوة نحو مستقبلك">Take the first step towards your future</p><input id="name" required placeholder="Full Name"><input id="phone" required placeholder="Mobile Number" inputmode="tel"><input id="email" type="email" placeholder="Email Address (Optional)"><select id="course" required><option value="">Program of Interest</option><option>Data Analysis</option><option>Cybersecurity</option><option>Graphic Design</option><option>Learning & Development</option><option>Performance Management System</option><option>Healthcare Facility Management</option><option>Digital Marketing</option><option>Networking & IT</option><option>Infection Control</option></select><button class="btn gold" type="submit" data-en="Reserve My Seat →" data-ar="احجز مقعدي ←">Reserve My Seat →</button><div class="note" data-en="Email is optional. Your registration will continue through WhatsApp." data-ar="البريد الإلكتروني اختياري. سيستكمل التسجيل عبر واتساب.">Email is optional. Your registration will continue through WhatsApp.</div></form></div></section>
-<div class="course-modal" id="courseModal" aria-hidden="true"><div class="modal-backdrop"></div><div class="modal-card" role="dialog" aria-modal="true"><button class="modal-close" aria-label="Close">×</button><div class="modal-hero" id="modalHero"></div><div class="modal-body"><div class="kicker">ESA ACADEMY PROGRAM</div><h2 id="modalTitle"></h2><p class="modal-intro" id="modalIntro"></p><div class="detail-grid"><div class="detail"><h4 id="learnHead">WHAT YOU’LL LEARN</h4><ul id="modalLearn"></ul></div><div class="detail"><h4 id="benefitHead">WHY IT MATTERS</h4><ul id="modalBenefits"></ul></div><div class="detail"><h4 id="careerHead">CAREER READINESS</h4><ul id="modalCareer"></ul></div><div class="detail market"><h4 id="marketHead">WHY THE MARKET NEEDS IT</h4><ul id="modalMarket"></ul></div></div><div class="modal-cta"><a href="#register" class="btn gold pulse" id="modalRegister">Reserve Your Seat →</a></div></div></div></div></main><footer id="contact" class="contact"><span>ESA Academy</span><span>01032226160</span><span>info@esa-skills.com</span></footer>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd36a"/><stop offset="1" stop-color="#f3ae12"/></linearGradient>
+  </defs>
+  <!-- ESA icon family: 24px grid, 1.75 stroke, round caps & joins -->
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15v3"/><path d="M11 10v8"/><path d="M15 12v6"/><path d="M19 6v12"/><path d="m7 11 4-4 4 3 4-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10Z"/><rect x="9" y="10.5" width="6" height="5" rx="1"/><path d="M10.2 10.5V9a1.8 1.8 0 0 1 3.6 0v1.5"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="m12 19 7-7 3 3-7 7-3-3Z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5Z"/><path d="m2 2 7.6 7.6"/><circle cx="11" cy="11" r="2"/></symbol>
+  <symbol id="i-learn" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 10v6"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><path d="m15.5 8.5 4-4"/><path d="M17 4.5h2.5V7"/></symbol>
+  <symbol id="i-hospital" viewBox="0 0 24 24"><path d="M4 21V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14"/><path d="M2 21h20"/><path d="M12 8v6"/><path d="M9 11h6"/><path d="M10 21v-3h4v3"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 11v3a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1Z"/><path d="M17 9a4 4 0 0 1 0 6"/><path d="M19.5 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+  <symbol id="i-network" viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="5" rx="1"/><rect x="2.5" y="16.5" width="6" height="5" rx="1"/><rect x="15.5" y="16.5" width="6" height="5" rx="1"/><path d="M12 7.5v4.5"/><path d="M5.5 16.5V12h13v4.5"/></symbol>
+  <symbol id="i-sanitize" viewBox="0 0 24 24"><path d="M12 22s7-3 7-9V6l-7-3-7 3v7c0 6 7 9 7 9Z"/><path d="M12 8v8"/><path d="M8 12h8"/></symbol>
+  <symbol id="i-mentor" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-1a6 6 0 0 1 6-6h2"/><path d="m15 18 2 2 4-4"/></symbol>
+  <symbol id="i-tools" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5.4 5.4L21 13l-8 8-2.6-2.6"/><path d="M14.7 6.3 13 4.6a2 2 0 0 0-2.8 0L3 11.8"/><path d="m7 15-4 4 2 2 4-4"/></symbol>
+  <symbol id="i-growth" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a14.5 14.5 0 0 1 0 19"/><path d="M12 2.5a14.5 14.5 0 0 0 0 19"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 22V4"/><path d="M4 4h12l-2 4 2 4H4"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.2 13.5-1.7 8 5.5-3 5.5 3-1.7-8"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5Z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M12 20v-9"/><path d="M12 11C12 7 9 4 4 4c0 4 3 7 8 7Z"/><path d="M12 13c0-3 2.5-6 7-6 0 3.5-2.5 6-7 6Z"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6.5A2.5 2.5 0 0 0 4 21.5v-2Z"/><path d="M8 7h8"/><path d="M8 11h6"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3.5 20.5 5 16.3A8.5 8.5 0 1 1 8 19.2l-4.5 1.3Z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9a5 5 0 0 1-2.7-2.7l.9-1-1-2L9 8.5Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+</svg>
+
+<div class="progress" aria-hidden="true"><span id="progress"></span></div>
+<header class="site-header" id="siteHeader"><div class="wrap nav">
+  <a class="logo" href="#top">esa<small>ACADEMY</small></a>
+  <nav class="links" aria-label="Main"><a href="#top" data-en="Home" data-ar="الرئيسية">Home</a><a href="#programs" data-en="Programs" data-ar="البرامج">Programs</a><a href="#why" data-en="Why ESA" data-ar="لماذا ESA">Why ESA</a><a href="#about" data-en="About" data-ar="عن ESA">About</a><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a><span class="nav-ink" aria-hidden="true"></span></nav>
+  <div class="actions"><div class="lang" role="group" aria-label="Language"><button class="on" data-lang="en">EN</button><button data-lang="ar">عربي</button></div><a href="#register" class="btn btn-gold btn-sm" data-en="Register Now →" data-ar="سجل الآن ←">Register Now →</a></div>
+</div></header>
+
+<main id="top">
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="hero-media" aria-hidden="true"><div class="hero-art"></div><span class="hero-sweep"></span></div>
+  <svg class="flight" viewBox="0 0 1440 700" preserveAspectRatio="none" aria-hidden="true"><path id="flightPath" d="M-20 610 C 260 560, 420 420, 640 430 S 1040 300, 1460 120"/></svg>
+  <div class="wrap hero-grid">
+    <div class="hero-inner">
+      <div class="eyebrow reveal-up" data-en="SKILLS TODAY · A BRIGHTER TOMORROW" data-ar="مهارات اليوم · لمستقبل أكثر إشراقًا">SKILLS TODAY · A BRIGHTER TOMORROW</div>
+      <h1 id="heroTitle" class="hero-title" data-en="IT’S THE <span class='gold'>ESA ERA</span>" data-ar="إنه عصر <span class='gold'>ESA</span>">IT’S THE <span class="gold">ESA ERA</span></h1>
+      <div class="pillars reveal-up" aria-label="Learn, Build, Grow, Lead"><span>LEARN</span><i></i><span>BUILD</span><i></i><span>GROW</span><i></i><span>LEAD</span></div>
+      <p class="lead reveal-up" data-en="Practical, future-ready skills designed for real opportunities in Egypt, the Gulf, and beyond." data-ar="مهارات عملية للمستقبل مصممة لفرص حقيقية في مصر والخليج وما بعدهما.">Practical, future-ready skills designed for real opportunities in Egypt, the Gulf, and beyond.</p>
+      <div class="hero-buttons reveal-up"><a class="btn btn-gold btn-shine magnetic" href="#register"><span data-en="Reserve Your Seat →" data-ar="احجز مقعدك ←">Reserve Your Seat →</span></a><a class="btn btn-ghost" href="#programs" data-en="Explore Programs" data-ar="استكشف البرامج">Explore Programs</a></div>
+      <div class="stats">
+        <div class="stat"><svg class="ico draw"><use href="#i-grid"/></svg><div><b class="count" data-to="9">9</b><span data-en="Programs" data-ar="برامج">Programs</span></div></div>
+        <div class="stat"><svg class="ico draw"><use href="#i-mentor"/></svg><div><b data-en="Expert" data-ar="خبراء">Expert</b><span data-en="Instructors" data-ar="مدربون">Instructors</span></div></div>
+        <div class="stat"><svg class="ico draw"><use href="#i-tools"/></svg><div><b data-en="Practical" data-ar="عملية">Practical</b><span data-en="Projects" data-ar="مشروعات">Projects</span></div></div>
+        <div class="stat"><svg class="ico draw"><use href="#i-growth"/></svg><div><b data-en="Career" data-ar="دعم">Career</b><span data-en="Support" data-ar="مهني">Support</span></div></div>
+      </div>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#programs" aria-label="Scroll to programs"><span></span></a>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+  <span>Data Analysis</span><span>Cybersecurity</span><span>Graphic Design</span><span>Learning &amp; Development</span><span>Performance Management</span><span>Healthcare Facility Management</span><span>Digital Marketing</span><span>Networking &amp; IT</span><span>Infection Control</span>
+  <span>Data Analysis</span><span>Cybersecurity</span><span>Graphic Design</span><span>Learning &amp; Development</span><span>Performance Management</span><span>Healthcare Facility Management</span><span>Digital Marketing</span><span>Networking &amp; IT</span><span>Infection Control</span>
+</div></div>
+
+<section id="programs" class="programs">
+  <div class="wrap">
+    <div class="section-top reveal-up"><div><div class="kicker" data-en="EXPLORE OUR PROGRAMS" data-ar="استكشف برامجنا">EXPLORE OUR PROGRAMS</div><h2 class="section-title" data-en="SKILLS FOR WHAT’S <span class='gold'>NEXT</span>" data-ar="مهارات لما هو <span class='gold'>قادم</span>">SKILLS FOR WHAT’S <span class="gold">NEXT</span></h2></div></div>
+    <div class="courses">
+      <article class="course" tabindex="0" role="button"><div class="course-media"><img class="course-img" src="data-analysis.webp" alt="" loading="lazy" decoding="async" width="590" height="202"></div><div class="course-body"><span class="course-icon"><svg class="ico"><use href="#i-chart"/></svg></span><h3 data-en="Data Analysis" data-ar="تحليل البيانات">Data Analysis</h3><p data-en="Turn data into real decisions." data-ar="حوّل البيانات إلى قرارات حقيقية.">Turn data into real decisions.</p></div><span class="course-more" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></article>
+      <article class="course" tabindex="0" role="button"><div class="course-media"><img class="course-img" src="cybersecurity.webp" alt="" loading="lazy" decoding="async" width="590" height="202"></div><div class="course-body"><span class="course-icon"><svg class="ico"><use href="#i-shield"/></svg></span><h3 data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</h3><p data-en="Protect. Detect. Stay ahead." data-ar="احمِ واكتشف وابقَ في المقدمة.">Protect. Detect. Stay ahead.</p></div><span class="course-more" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></article>
+      <article class="course" tabindex="0" role="button"><div class="course-media"><img class="course-img" src="graphic-design.webp" alt="" loading="lazy" decoding="async" width="590" height="202"></div><div class="course-body"><span class="course-icon"><svg class="ico"><use href="#i-pen"/></svg></span><h3 data-en="Graphic Design" data-ar="التصميم الجرافيكي">Graphic Design</h3><p data-en="Bring ideas to life." data-ar="حوّل الأفكار إلى واقع.">Bring ideas to life.</p></div><span class="course-more" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></article>
+      <article class="course" tabindex="0" role="button"><div class="course-media"><img class="course-img" src="learning-development.webp" alt="" loading="lazy" decoding="async" width="590" height="202"></div><div class="course-body"><span class="course-icon"><svg class="ico"><use href="#i-learn"/></svg></span><h3 data-en="Learning & Development" data-ar="التعلم والتطوير">Learning & Development</h3><p data-en="Develop people. Build performance." data-ar="طوّر الأفراد وابنِ الأداء.">Develop people. Build performance.</p></div><span class="course-more" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></article>
+      <article class="course" tabindex="0" role="button"><div class="course-media"><img class="course-img" src="performance-management.webp" alt="" loading="lazy" decoding="async" width="590" height="202"></div><div class="course-body"><span class="course-icon"><svg class="ico"><use href="#i-target"/></svg></span><h3 data-en="Performance Management System" data-ar="نظام إدارة الأداء">Performance Management System</h3><p data-en="Set goals. Drive results." data-ar="حدد الأهداف وحقق النتائج.">Set goals. Drive results.</p></div><span class="course-more" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></article>
+      <article class="course" tabindex="0" role="button"><div class="course-media"><img class="course-img" src="healthcare-facilities.webp" alt="" loading="lazy" decoding="async" width="590" height="202"></div><div class="course-body"><span class="course-icon"><svg class="ico"><use href="#i-hospital"/></svg></span><h3 data-en="Healthcare Facility Management" data-ar="إدارة المنشآت الصحية">Healthcare Facility Management</h3><p data-en="Manage. Improve. Make an impact." data-ar="أدِر وطوّر واصنع أثرًا.">Manage. Improve. Make an impact.</p></div><span class="course-more" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></article>
+      <article class="course" tabindex="0" role="button"><div class="course-media"><img class="course-img" src="digital-marketing.webp" alt="" loading="lazy" decoding="async" width="590" height="202"></div><div class="course-body"><span class="course-icon"><svg class="ico"><use href="#i-megaphone"/></svg></span><h3 data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</h3><p data-en="Reach. Engage. Grow." data-ar="تواصل وتفاعل وانمُ.">Reach. Engage. Grow.</p></div><span class="course-more" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></article>
+      <article class="course" tabindex="0" role="button"><div class="course-media"><img class="course-img" src="networks.webp" alt="" loading="lazy" decoding="async" width="590" height="202"></div><div class="course-body"><span class="course-icon"><svg class="ico"><use href="#i-network"/></svg></span><h3 data-en="Networking & IT" data-ar="الشبكات">Networking & IT</h3><p data-en="Build the backbone of tomorrow." data-ar="ابنِ البنية التحتية للغد.">Build the backbone of tomorrow.</p></div><span class="course-more" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></article>
+      <article class="course" tabindex="0" role="button"><div class="course-media"><img class="course-img" src="infection-control.webp" alt="" loading="lazy" decoding="async" width="590" height="202"></div><div class="course-body"><span class="course-icon"><svg class="ico"><use href="#i-sanitize"/></svg></span><h3 data-en="Infection Control" data-ar="مكافحة العدوى">Infection Control</h3><p data-en="Prevention. Safety. Better Healthcare." data-ar="وقاية وأمان ورعاية صحية أفضل.">Prevention. Safety. Better Healthcare.</p></div><span class="course-more" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></article>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why-sec">
+  <div class="wrap why-grid">
+    <div class="why reveal-up"><div class="kicker">WHY ESA</div><h2><span class="gold">MORE</span> THAN<br>JUST COURSES</h2></div>
+    <div class="benefits">
+      <div class="benefit reveal-up"><div class="circle"><svg class="ico draw"><use href="#i-mentor"/></svg></div><b data-en="Expert Instructors" data-ar="مدربون خبراء">Expert Instructors</b><p data-en="Industry experience" data-ar="خبرة عملية">Industry experience</p></div>
+      <div class="benefit reveal-up"><div class="circle"><svg class="ico draw"><use href="#i-tools"/></svg></div><b data-en="Hands-on Learning" data-ar="تعلم عملي">Hands-on Learning</b><p data-en="Real world projects" data-ar="مشروعات واقعية">Real world projects</p></div>
+      <div class="benefit reveal-up"><div class="circle"><svg class="ico draw"><use href="#i-growth"/></svg></div><b data-en="Career Support" data-ar="دعم مهني">Career Support</b><p data-en="Guidance & opportunities" data-ar="توجيه وفرص">Guidance & opportunities</p></div>
+      <div class="benefit reveal-up"><div class="circle"><svg class="ico draw"><use href="#i-globe"/></svg></div><b data-en="Regional Relevance" data-ar="ملاءمة إقليمية">Regional Relevance</b><p data-en="Tailored for Egypt & Gulf" data-ar="مصمم لمصر والخليج">Tailored for Egypt & Gulf</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-era" id="about"><div class="wrap">
+  <div class="about-head reveal-up">
+    <span class="kicker kicker-gold" data-en="ABOUT ESA" data-ar="عن ESA">ABOUT ESA</span>
+    <h2 class="about-title" data-en="We Turn Learning Into <span class='gold'>Real Capability.</span>" data-ar="نحوّل التعلّم إلى <span class='gold'>قدرة حقيقية.</span>">We Turn Learning Into <span class="gold">Real Capability.</span></h2>
+    <p class="about-intro" data-en="ESA — Excellence in Every Skill is a professional learning and development academy built to bridge the gap between theoretical knowledge and real-world performance. We design practical, career-focused learning experiences that help learners and professionals build applicable skills, strengthen their capabilities, and prepare for an evolving job market." data-ar="ESA — Excellence in Every Skill هي أكاديمية للتعليم والتطوير المهني، بُنيت لسد الفجوة بين المعرفة النظرية ومتطلبات الأداء الحقيقي. نصمم تجارب تعلم عملية وموجهة للمسار المهني تساعد المتعلمين والمهنيين على بناء مهارات قابلة للتطبيق والاستعداد لسوق عمل متغير.">ESA — Excellence in Every Skill is a professional learning and development academy built to bridge the gap between theoretical knowledge and real-world performance.</p>
+  </div>
+  <div class="about-grid">
+    <article class="about-card tilt reveal-up"><div class="card-top"><svg class="ico draw"><use href="#i-eye"/></svg><span class="about-num">01 / VISION</span></div><h3 data-en="Our Vision" data-ar="رؤيتنا">Our Vision</h3><p data-en="To contribute to a generation equipped with future-ready skills and the ability to turn knowledge into meaningful professional performance and impact." data-ar="أن نساهم في بناء جيل يمتلك مهارات المستقبل والقدرة على تحويل المعرفة إلى أداء وتأثير مهني حقيقي.">Future-ready skills and meaningful impact.</p></article>
+    <article class="about-card tilt reveal-up"><div class="card-top"><svg class="ico draw"><use href="#i-flag"/></svg><span class="about-num">02 / MISSION</span></div><h3 data-en="Our Mission" data-ar="رسالتنا">Our Mission</h3><p data-en="To deliver practical, market-relevant professional development programs that combine knowledge, application, projects, and outcome-focused thinking." data-ar="تقديم برامج تطوير مهني عملية ومرتبطة بالسوق تجمع بين المعرفة والتطبيق والمشروعات والتركيز على النتائج.">Practical, market-relevant professional development.</p></article>
+    <article class="about-card tilt reveal-up approach"><div class="card-top"><svg class="ico draw"><use href="#i-route"/></svg><span class="about-num">03 / APPROACH</span></div><h3 class="steps-h"><span>Learn</span><i class="step-line"></i><span>Apply</span><i class="step-line"></i><span>Perform</span></h3><p data-en="Our approach moves from understanding to application and ultimately to real-world performance." data-ar="منهجيتنا تبدأ بالفهم، ثم التطبيق، وتنتهي بالقدرة على استخدام المهارة في مواقف العمل الحقيقية.">Understanding to application to performance.</p></article>
+    <article class="about-card tilt reveal-up"><div class="card-top"><svg class="ico draw"><use href="#i-target"/></svg><span class="about-num">04 / RELEVANCE</span></div><h3 data-en="Market Relevance" data-ar="مرتبطون بالسوق">Market Relevance</h3><p data-en="Programs designed around professionally relevant skills and regional needs, with a global perspective." data-ar="برامج مصممة حول المهارات المطلوبة واحتياجات السوق في المنطقة بمنظور عالمي.">Professionally relevant skills with a global perspective.</p></article>
+  </div>
+  <div class="esa-standard reveal-up"><span class="std-glow" aria-hidden="true"></span><small>THE ESA STANDARD</small><h3 data-en="Every ESA program must answer one question:<br><span class='gold'>What will you be able to DO after completing it?</span>" data-ar="كل برنامج في ESA لازم يجاوب على سؤال واحد:<br><span class='gold'>ماذا ستستطيع أن تفعل بعد إتمامه؟</span>">Every ESA program must answer one question:<br><span class="gold">What will you be able to DO after completing it?</span></h3><p data-en="We focus on application, clarity, market relevance, and meaningful learner outcomes." data-ar="نركز على التطبيق والوضوح والارتباط بسوق العمل والنتائج الحقيقية للمتعلم.">Application, clarity, relevance and outcomes.</p></div>
+  <div class="about-values">
+    <div class="reveal-up"><svg class="ico draw"><use href="#i-award"/></svg><b>01</b><strong data-en="Excellence" data-ar="التميّز">Excellence</strong><span data-en="Raising the standard of the learning experience." data-ar="رفع معيار الجودة في تجربة التعلم.">Raising the standard.</span></div>
+    <div class="reveal-up"><svg class="ico draw"><use href="#i-layers"/></svg><b>02</b><strong data-en="Application" data-ar="التطبيق">Application</strong><span data-en="Knowledge becomes stronger when it becomes practice." data-ar="المعرفة تصبح أقوى عندما تتحول إلى ممارسة.">Knowledge into practice.</span></div>
+    <div class="reveal-up"><svg class="ico draw"><use href="#i-sprout"/></svg><b>03</b><strong data-en="Growth" data-ar="التطور">Growth</strong><span data-en="Continuous learning toward stronger capability." data-ar="تعلم مستمر لبناء قدرات أقوى.">Continuous learning.</span></div>
+    <div class="reveal-up"><svg class="ico draw"><use href="#i-zap"/></svg><b>04</b><strong data-en="Impact" data-ar="الأثر">Impact</strong><span data-en="Outcomes learners can use professionally." data-ar="نتائج يمكن للمتعلم استخدامها مهنيًا.">Professional outcomes.</span></div>
+  </div>
+  <div class="about-tags reveal-up"><span><svg class="ico"><use href="#i-grid"/></svg>9 Professional Programs</span><span><svg class="ico"><use href="#i-tools"/></svg>Practical Learning</span><span><svg class="ico"><use href="#i-growth"/></svg>Career-Focused</span><span><svg class="ico"><use href="#i-target"/></svg>Market-Relevant Skills</span></div>
+  <div class="about-cta reveal-up"><span class="kicker kicker-gold">EXCELLENCE IN EVERY SKILL</span><h3 data-en="Your Next Skill Can Shape Your Next Move." data-ar="مهارتك القادمة قد تصنع خطوتك القادمة.">Your Next Skill Can Shape Your Next Move.</h3><p data-en="Explore ESA programs and choose the learning track aligned with your professional goal." data-ar="استكشف برامج ESA واختر المسار الأقرب لهدفك المهني.">Explore ESA programs and choose the learning track aligned with your professional goal.</p><div class="hero-buttons center"><a class="btn btn-gold btn-shine" href="#programs" data-en="Explore Programs" data-ar="استكشف البرامج">Explore Programs</a><a class="btn btn-ghost" href="#register" data-en="Reserve Your Seat" data-ar="احجز مقعدك">Reserve Your Seat</a></div></div>
+</div></section>
+
+<section class="register" id="register">
+  <div class="register-bg" aria-hidden="true"></div>
+  <div class="wrap register-grid">
+    <div class="register-copy reveal-up"><div class="kicker">A HIGHER TOMORROW</div><h2 data-en="RESERVE<br><span class='gold'>YOUR SEAT</span>" data-ar="احجز<br><span class='gold'>مقعدك</span>">RESERVE<br><span class="gold">YOUR SEAT</span></h2><p class="lead" data-en="Be part of a new era of skills, opportunities, and real impact." data-ar="كن جزءًا من عصر جديد من المهارات والفرص والتأثير الحقيقي.">Be part of a new era of skills, opportunities, and real impact.</p>
+      <ul class="reg-points"><li><svg class="ico"><use href="#i-whatsapp"/></svg><span data-en="Registration continues on WhatsApp" data-ar="يستكمل التسجيل عبر واتساب">Registration continues on WhatsApp</span></li><li><svg class="ico"><use href="#i-grid"/></svg><span data-en="9 professional programs" data-ar="9 برامج مهنية">9 professional programs</span></li></ul>
+    </div>
+    <form class="form reveal-up" id="leadForm" novalidate>
+      <h3 data-en="Register Now" data-ar="سجل الآن">Register Now</h3><p data-en="Take the first step towards your future" data-ar="خذ أول خطوة نحو مستقبلك">Take the first step towards your future</p>
+      <label class="field"><svg class="ico"><use href="#i-user"/></svg><input id="name" required placeholder=" " autocomplete="name"><span data-en="Full Name" data-ar="الاسم بالكامل">Full Name</span></label>
+      <label class="field"><svg class="ico"><use href="#i-phone"/></svg><input id="phone" required placeholder=" " inputmode="tel" autocomplete="tel"><span data-en="Mobile Number" data-ar="رقم الموبايل">Mobile Number</span></label>
+      <label class="field"><svg class="ico"><use href="#i-mail"/></svg><input id="email" type="email" placeholder=" " autocomplete="email"><span data-en="Email Address (Optional)" data-ar="البريد الإلكتروني (اختياري)">Email Address (Optional)</span></label>
+      <label class="field select"><svg class="ico"><use href="#i-book"/></svg><select id="course" required><option value="" data-en="Program of Interest" data-ar="البرنامج المطلوب">Program of Interest</option><option value="Data Analysis" data-en="Data Analysis" data-ar="تحليل البيانات">Data Analysis</option><option value="Cybersecurity" data-en="Cybersecurity" data-ar="الأمن السيبراني">Cybersecurity</option><option value="Graphic Design" data-en="Graphic Design" data-ar="التصميم الجرافيكي">Graphic Design</option><option value="Learning & Development" data-en="Learning & Development" data-ar="التعلم والتطوير">Learning & Development</option><option value="Performance Management System" data-en="Performance Management System" data-ar="نظام إدارة الأداء">Performance Management System</option><option value="Healthcare Facility Management" data-en="Healthcare Facility Management" data-ar="إدارة المنشآت الصحية">Healthcare Facility Management</option><option value="Digital Marketing" data-en="Digital Marketing" data-ar="التسويق الرقمي">Digital Marketing</option><option value="Networking & IT" data-en="Networking & IT" data-ar="الشبكات">Networking & IT</option><option value="Infection Control" data-en="Infection Control" data-ar="مكافحة العدوى">Infection Control</option></select></label>
+      <button class="btn btn-gold btn-shine submit" type="submit"><span class="label" data-en="Reserve My Seat →" data-ar="احجز مقعدي ←">Reserve My Seat →</span><span class="done" aria-hidden="true"><svg class="ico"><use href="#i-whatsapp"/></svg>WhatsApp</span></button>
+      <div class="note" data-en="Email is optional. Your registration will continue through WhatsApp." data-ar="البريد الإلكتروني اختياري. سيستكمل التسجيل عبر واتساب.">Email is optional. Your registration will continue through WhatsApp.</div>
+    </form>
+  </div>
+</section>
+
+<div class="course-modal" id="courseModal" aria-hidden="true"><div class="modal-backdrop"></div><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" aria-label="Close"><svg class="ico"><use href="#i-close"/></svg></button><div class="modal-hero" id="modalHero"></div><div class="modal-body"><div class="kicker kicker-gold">ESA ACADEMY PROGRAM</div><h2 id="modalTitle"></h2><p class="modal-intro" id="modalIntro"></p><div class="detail-grid"><div class="detail"><h4><svg class="ico"><use href="#i-book"/></svg><span id="learnHead">WHAT YOU’LL LEARN</span></h4><ul id="modalLearn"></ul></div><div class="detail"><h4><svg class="ico"><use href="#i-zap"/></svg><span id="benefitHead">WHY IT MATTERS</span></h4><ul id="modalBenefits"></ul></div><div class="detail"><h4><svg class="ico"><use href="#i-growth"/></svg><span id="careerHead">CAREER READINESS</span></h4><ul id="modalCareer"></ul></div><div class="detail market"><h4><svg class="ico"><use href="#i-globe"/></svg><span id="marketHead">WHY THE MARKET NEEDS IT</span></h4><ul id="modalMarket"></ul></div></div><div class="modal-cta"><a href="#register" class="btn btn-gold btn-shine pulse" id="modalRegister">Reserve Your Seat →</a></div></div></div></div>
+</main>
+
+<footer id="contact" class="contact"><div class="wrap contact-row">
+  <span class="contact-brand"><span class="logo logo-sm">esa<small>ACADEMY</small></span><span>ESA Academy</span></span>
+  <a href="tel:01032226160" class="contact-item"><svg class="ico"><use href="#i-phone"/></svg><span dir="ltr">01032226160</span></a>
+  <a href="mailto:info@esa-skills.com" class="contact-item"><svg class="ico"><use href="#i-mail"/></svg><span>info@esa-skills.com</span></a>
+</div></footer>
+
 <script>
-const btns=document.querySelectorAll('[data-lang]');function lang(l){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.querySelectorAll('[data-en][data-ar]').forEach(e=>e.innerHTML=e.dataset[l]);btns.forEach(b=>b.classList.toggle('on',b.dataset.lang===l));localStorage.setItem('esaLang',l)}btns.forEach(b=>b.onclick=()=>lang(b.dataset.lang));lang(localStorage.getItem('esaLang')||'en');
-document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('name').value.trim(),p=document.getElementById('phone').value.trim(),em=document.getElementById('email').value.trim(),c=document.getElementById('course').value,l=document.documentElement.lang;const msg=l==='ar'?('مرحبًا ESA Academy\nالاسم: '+n+'\nرقم الهاتف: '+p+'\n'+(em?'البريد الإلكتروني: '+em+'\n':'')+'البرنامج: '+c):('Hello ESA Academy\nName: '+n+'\nPhone: '+p+'\n'+(em?'Email: '+em+'\n':'')+'Program: '+c);location.href='https://wa.me/201032226160?text='+encodeURIComponent(msg)});
-</script><script>
 const courseInfo={
 "Data Analysis":{ar:"تحليل البيانات",img:"data-analysis.webp",intro:["Learn to turn raw data into clear insights and business decisions.","تعلّم تحويل البيانات الخام إلى رؤى واضحة وقرارات عملية."],learn:[["Excel and data cleaning","Power BI dashboards and visualization","Core statistics and KPI analysis","Practical reporting and storytelling"],["Excel وتنظيف وتجهيز البيانات","Power BI وبناء لوحات المعلومات","أساسيات الإحصاء وتحليل مؤشرات الأداء","التقارير العملية وعرض قصة البيانات"]],benefit:[["Make evidence-based decisions","Measure performance and spot trends","Communicate insights clearly"],["اتخاذ قرارات مبنية على البيانات","قياس الأداء واكتشاف الاتجاهات","عرض النتائج بصورة واضحة للإدارة"]],career:[["Build portfolio-ready dashboards","Prepare for analyst and reporting roles","Apply analytics across business functions"],["بناء Dashboards تصلح للـPortfolio","الاستعداد لوظائف التحليل والتقارير","تطبيق التحليل في قطاعات ووظائف مختلفة"]],market:[["Organizations increasingly rely on data to improve efficiency, customer experience and planning."],["المؤسسات تعتمد بصورة متزايدة على البيانات لتحسين الكفاءة وتجربة العملاء والتخطيط."]]},
 "Cybersecurity":{ar:"الأمن السيبراني",img:"cybersecurity.webp",intro:["Build a practical foundation for protecting systems, networks and information.","ابنِ أساسًا عمليًا لحماية الأنظمة والشبكات والمعلومات."],learn:[["Security fundamentals and threats","Network and endpoint protection","Risk, vulnerabilities and incident response","Security awareness and practical scenarios"],["أساسيات الأمن والتهديدات","حماية الشبكات والأجهزة","المخاطر والثغرات والاستجابة للحوادث","التوعية الأمنية وسيناريوهات عملية"]],benefit:[["Understand how attacks happen","Reduce organizational security risk","Develop a security-first mindset"],["فهم كيفية حدوث الهجمات","تقليل المخاطر الأمنية بالمؤسسات","بناء عقلية أمنية عملية"]],career:[["Foundation for SOC and security roles","Useful for IT and network professionals","Practical security vocabulary and workflows"],["أساس لوظائف SOC والأمن السيبراني","مفيد لمتخصصي IT والشبكات","فهم عملي لمصطلحات وإجراءات الأمن"]],market:[["Digital transformation, cloud adoption and growing cyber threats keep security skills strategically important."],["التحول الرقمي والـCloud وتزايد التهديدات الإلكترونية يجعل مهارات الأمن السيبراني ذات أهمية مستمرة."]]},
@@ -192,36 +175,6 @@ const courseInfo={
 "Networking & IT":{ar:"الشبكات وتكنولوجيا المعلومات",img:"networks.webp",intro:["Build the technical foundation behind connected, reliable digital environments.","ابنِ الأساس التقني للبيئات الرقمية المتصلة والموثوقة."],learn:[["Network fundamentals and protocols","IP addressing and core configuration","Troubleshooting methodology","Infrastructure and security basics"],["أساسيات الشبكات والبروتوكولات","IP والإعدادات الأساسية","منهجية اكتشاف الأعطال","أساسيات البنية التحتية والأمن"]],benefit:[["Understand how systems communicate","Troubleshoot common connectivity issues","Build a stronger IT foundation"],["فهم كيفية تواصل الأنظمة","حل مشكلات الاتصال الشائعة","بناء أساس قوي في IT"]],career:[["Foundation for network and IT support roles","Supports progression toward infrastructure specialties","Hands-on technical problem solving"],["أساس لوظائف الشبكات والدعم الفني","يدعم التطور لتخصصات البنية التحتية","حل المشكلات التقنية بصورة عملية"]],market:[["Cloud, connected workplaces and digital services still depend on reliable networks and skilled IT professionals."],["الـCloud وبيئات العمل المتصلة والخدمات الرقمية ما زالت تعتمد على شبكات موثوقة ومتخصصي IT مهرة."]]},
 "Infection Control":{ar:"مكافحة العدوى",img:"infection-control.webp",intro:["Develop practical infection-prevention thinking for safer healthcare environments.","طوّر فهمًا عمليًا للوقاية من العدوى لبناء بيئات رعاية صحية أكثر أمانًا."],learn:[["Chain of infection and transmission","Standard precautions and hand hygiene","PPE and environmental controls","Surveillance and prevention practices"],["سلسلة العدوى وطرق الانتقال","الاحتياطات القياسية ونظافة اليدين","معدات الوقاية وضبط البيئة","الترصد وممارسات الوقاية"]],benefit:[["Reduce preventable infection risks","Strengthen patient and staff safety","Apply consistent prevention practices"],["تقليل مخاطر العدوى الممكن منعها","تعزيز سلامة المرضى والعاملين","تطبيق ممارسات وقاية متسقة"]],career:[["Useful across clinical and healthcare quality roles","Supports infection-prevention responsibilities","Builds safety-focused healthcare practice"],["مفيد للوظائف السريرية والجودة الصحية","يدعم مسؤوليات الوقاية من العدوى","يبني ممارسة صحية تركز على السلامة"]],market:[["Patient safety, accreditation and healthcare quality keep infection prevention a core capability across health systems."],["سلامة المرضى والاعتماد وجودة الرعاية تجعل مكافحة العدوى مهارة أساسية داخل الأنظمة الصحية."]]}
 };
-const modal=document.getElementById('courseModal'), hero=document.getElementById('modalHero');const modalTitleEl=document.getElementById('modalTitle'),modalIntroEl=document.getElementById('modalIntro'),learnHeadEl=document.getElementById('learnHead'),benefitHeadEl=document.getElementById('benefitHead'),careerHeadEl=document.getElementById('careerHead'),marketHeadEl=document.getElementById('marketHead'),modalRegisterEl=document.getElementById('modalRegister');
-function fill(id,arr){document.getElementById(id).innerHTML=arr.map(x=>'<li>'+x+'</li>').join('')}
-function openCourse(title){const d=courseInfo[title];if(!d)return;const ar=document.documentElement.lang==='ar',i=ar?1:0;modalTitleEl.textContent=ar?d.ar:title;modalIntroEl.textContent=d.intro[i];hero.style.backgroundImage="url('"+d.img+"')";fill('modalLearn',d.learn[i]);fill('modalBenefits',d.benefit[i]);fill('modalCareer',d.career[i]);fill('modalMarket',d.market[i]);learnHeadEl.textContent=ar?'ماذا ستتعلم':'WHAT YOU’LL LEARN';benefitHeadEl.textContent=ar?'ما الاستفادة':'WHY IT MATTERS';careerHeadEl.textContent=ar?'كيف يؤهلك لسوق العمل':'CAREER READINESS';marketHeadEl.textContent=ar?'لماذا يحتاج السوق لهذه المهارة':'WHY THE MARKET NEEDS IT';modalRegisterEl.textContent=ar?'احجز مقعدك ←':'Reserve Your Seat →';modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-document.querySelectorAll('.course').forEach(el=>{el.insertAdjacentHTML('afterbegin','<span class="course-more">+</span>');const go=()=>openCourse(el.querySelector('h3').dataset.en);el.addEventListener('click',go);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
-function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''};document.querySelector('.modal-close').onclick=closeModal;document.querySelector('.modal-backdrop').onclick=closeModal;document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});modalRegisterEl.onclick=closeModal;
 </script>
-<script>
-(function(){
-  function applyDataLang(){
-    const lang=document.documentElement.lang==='en'?'en':'ar';
-    document.querySelectorAll('[data-ar][data-en]').forEach(el=>{
-      const v=el.getAttribute('data-'+lang);
-      if(v!==null) el.innerHTML=v;
-    });
-  }
-  applyDataLang();
-  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setTimeout(applyDataLang,0)));
-  new MutationObserver(applyDataLang).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
-})();
-</script>
-<script>
-(function(){
-  const aboutLink=document.querySelector('a[href="#about"]');
-  const about=document.getElementById('about');
-  if(aboutLink && about){
-    aboutLink.addEventListener('click',function(e){
-      e.preventDefault();
-      about.scrollIntoView({behavior:'smooth',block:'start'});
-      if(history.replaceState) history.replaceState(null,'','#about');
-    });
-  }
-})();
-</script>\n</body></html>
+<script src="esa.js"></script>
+</body></html>
