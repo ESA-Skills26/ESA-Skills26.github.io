@@ -169,8 +169,9 @@
 
   /* ---------- Entrance ---------- */
   const heroImg = new Image(); heroImg.src = 'hero-eagle.webp';
-  const start = () => requestAnimationFrame(() => document.body.classList.add('loaded'));
-  if (heroImg.complete) start(); else { heroImg.onload = heroImg.onerror = start; setTimeout(start, 1500); }
+  let started = false;
+  const start = () => { if (started) return; started = true; document.body.offsetWidth; document.body.classList.add('loaded'); };
+  if (heroImg.complete || document.hidden) setTimeout(start, 30); else { heroImg.onload = heroImg.onerror = start; setTimeout(start, 1200); }
   $$('.hero .reveal-up').forEach((el, i) => { el.style.transitionDelay = (.25 + i * .12) + 's'; setTimeout(() => el.classList.add('in'), 60); });
 
   /* Count-up for the program number */

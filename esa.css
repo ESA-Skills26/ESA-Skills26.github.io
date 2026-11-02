@@ -274,9 +274,9 @@ section{position:relative}
 @media(max-width:850px){
   .links{display:none}.nav{gap:12px}.actions{margin-inline-start:auto}
   .hero{min-height:0;max-height:none;align-items:flex-end}
-  .hero-art,.js .hero-art,.js .loaded .hero-art,[dir=rtl] .hero-art{inset:0 0 auto 0;width:100%;height:auto;aspect-ratio:624/460;background-size:cover;background-position:center;transform:none;translate:none!important}
-  .hero-media:after,[dir=rtl] .hero-media:after{background:linear-gradient(180deg,rgba(11,11,11,0) 0,rgba(11,11,11,0) calc(73vw - 120px),var(--ink) calc(73vw + 10px))}
-  .hero-inner{padding:calc(73vw - 20px) 0 70px;max-width:100%}
+  .hero-art,.js .hero-art,.js .loaded .hero-art,[dir=rtl] .hero-art{inset:0 0 auto 0;width:100%;height:auto;aspect-ratio:1.47;background-size:109% auto;background-position:100% 0;transform:none;translate:none!important}
+  .hero-media:after,[dir=rtl] .hero-media:after{background:linear-gradient(180deg,rgba(11,11,11,0) 0,rgba(11,11,11,0) calc(68vw - 90px),var(--ink) calc(68vw + 4px))}
+  .hero-inner{padding:calc(68vw + 6px) 0 70px;max-width:100%}
   .flight{display:none}
   .stats{grid-template-columns:repeat(2,auto);gap:20px 26px}
   .stat,.stat:first-child{padding:0;border:0}
