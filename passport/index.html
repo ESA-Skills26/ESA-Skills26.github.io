@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESA Passport — ESA Academy</title>
+<meta name="description" content="ESA Graduate Passport: one digital identity for every ESA graduate — certificates, verification and ongoing benefits.">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Changa:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../esa.css?v=5">
+<link rel="stylesheet" href="passport.css?v=1">
+</head>
+<body class="pp">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2.5"/><circle cx="8" cy="11" r="2.4"/><path d="M4.8 16.5c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4M14 10h5M14 14h4"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></symbol>
+  <symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 9a3 3 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a3 3 0 0 0 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M9 15l6-6"/><circle cx="9.5" cy="9.5" r=".8"/><circle cx="14.5" cy="14.5" r=".8"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 12H5z"/><path d="M5 19h14"/></symbol>
+  <symbol id="i-userplus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 14l2 2 4-4"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-tap" viewBox="0 0 24 24"><path d="M9 11V5a2 2 0 0 1 4 0v5"/><path d="M13 10a2 2 0 0 1 4 0v1a2 2 0 0 1 4 0v4a7 7 0 0 1-7 7h-1.5a6 6 0 0 1-4.6-2.2L4.5 15.5a1.8 1.8 0 0 1 2.7-2.4L9 15"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M3 9.5h18"/><path d="M8 2.5v4"/><path d="M16 2.5v4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V2h12v7"/><rect x="2" y="9" width="20" height="9" rx="2"/><path d="M6 14h12v8H6z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5"/><path d="M12 16.5h.01"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3.5 20.5 5 16.3A8.5 8.5 0 1 1 8 19.2l-4.5 1.3Z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9a5 5 0 0 1-2.7-2.7l.9-1-1-2L9 8.5Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+</svg>
+
+<header class="site-header scrolled" id="siteHeader"><div class="wrap nav">
+  <a class="logo" href="../" aria-label="ESA Academy home">esa<small>ACADEMY</small></a>
+  <nav class="links" aria-label="Passport"><a href="#card" data-en="My Card" data-ar="بطاقتي">My Card</a><a href="#benefits" data-en="Benefits" data-ar="المزايا">Benefits</a><a href="#tiers" data-en="Tiers" data-ar="المستويات">Tiers</a><a href="#journey" data-en="Journey" data-ar="الرحلة">Journey</a><a href="#offers" data-en="Offers & Events" data-ar="العروض والفعاليات">Offers & Events</a><a href="../" data-en="ESA Home" data-ar="الرئيسية">ESA Home</a></nav>
+  <div class="actions"><div class="lang" role="group" aria-label="Language"><button class="on" data-lang="en">EN</button><button data-lang="ar">عربي</button></div><a href="#card" class="btn btn-gold btn-sm pp-hdr-btn" data-en="Open My Card" data-ar="افتح بطاقتي">Open My Card</a></div>
+</div></header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="pp-hero" id="top">
+  <div class="pp-wedge" aria-hidden="true"></div>
+  <div class="pp-rings" aria-hidden="true"></div>
+  <div class="wrap pp-hero-grid">
+    <div class="pp-hero-copy">
+      <div class="kicker kicker-gold">ESA GRADUATE PASSPORT</div>
+      <h1 class="pp-title"><span class="pp-en-display">ESA <em>Passport</em></span>
+        <span class="pp-h1" data-en="Your certificate is a <span class='gold'>beginning</span>, not the end of the road." data-ar="شهادتك <span class='gold'>بداية</span>… مش نهاية الطريق.">Your certificate is a <span class="gold">beginning</span>, not the end of the road.</span></h1>
+      <p class="lead" data-en="One digital identity for every ESA graduate: all your certificates in one verified profile, a digital card you can share, and benefits that continue after graduation." data-ar="هوية رقمية واحدة لكل خريج ESA: كل شهاداتك في ملف واحد موثّق، وبطاقة رقمية تقدر تشاركها، ومزايا مستمرة بعد التخرج.">One digital identity for every ESA graduate: all your certificates in one verified profile, a digital card you can share, and benefits that continue after graduation.</p>
+      <div class="hero-buttons"><a class="btn btn-gold btn-shine" href="#card"><svg class="ico"><use href="#i-id"/></svg><span data-en="Open My Card" data-ar="افتح بطاقتي">Open My Card</span></a><a class="btn btn-ghost" href="#benefits" data-en="See the Benefits" data-ar="اعرف المزايا">See the Benefits</a></div>
+      <ul class="pp-stats">
+        <li><b>4</b><span data-en="benefit pillars" data-ar="محاور مزايا">benefit pillars</span></li>
+        <li><b>3</b><span data-en="membership tiers" data-ar="مستويات عضوية">membership tiers</span></li>
+        <li><b>1</b><span data-en="ID for life" data-ar="رقم مدى الحياة">ID for life</span></li>
+      </ul>
+    </div>
+    <div class="pp-hero-visual" aria-hidden="true">
+      <div class="pp-card pp-card-hero">
+        <div class="pp-card-top"><span class="en-lbl">GRADUATE ID</span><img src="esa-logo.webp" alt="" class="pp-card-logo"></div>
+        <div class="pp-card-body">
+          <div class="pp-qr pp-qr-fake"></div>
+          <div class="pp-card-meta"><small>MEMBER NO.</small><strong class="mono">ESA-G26-XXXXX</strong><i></i><i class="s"></i></div>
+        </div>
+        <div class="pp-card-foot"><span data-en="One identity · many achievements" data-ar="هوية واحدة… وإنجازات متعددة">One identity · many achievements</span><span class="dots"><i class="g"></i><i class="b"></i><i class="y"></i></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOOKUP / MY CARD ============ -->
+<section class="pp-sec pp-lookup" id="card">
+  <div class="wrap">
+    <div class="pp-head center">
+      <div class="kicker kicker-gold" data-en="MY PASSPORT" data-ar="جواز سفري">MY PASSPORT</div>
+      <h2 class="section-title" data-en="Open your <span class='gold'>digital card</span>" data-ar="افتح <span class='gold'>بطاقتك الرقمية</span>">Open your <span class="gold">digital card</span></h2>
+      <p class="lead" data-en="Enter the Graduate ID you received in your activation message. Anyone can verify a graduate with the same ID." data-ar="اكتب رقم الخريج (Graduate ID) اللي وصلك في رسالة التفعيل. وأي جهة تقدر تتحقق من خريج بنفس الرقم.">Enter the Graduate ID you received in your activation message. Anyone can verify a graduate with the same ID.</p>
+    </div>
+    <form class="pp-form" id="ppForm" autocomplete="off" novalidate>
+      <label class="sr" for="ppId">Graduate ID</label>
+      <span class="pp-form-ico"><svg class="ico"><use href="#i-id"/></svg></span>
+      <input id="ppId" name="id" dir="ltr" placeholder="ESA-G26-XXXXX" spellcheck="false" maxlength="40">
+      <button class="btn btn-gold" type="submit" id="ppBtn"><svg class="ico"><use href="#i-search"/></svg><span data-en="Show Card" data-ar="اعرض البطاقة">Show Card</span></button>
+    </form>
+    <div id="ppResult" class="pp-result" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section class="pp-sec" id="benefits">
+  <div class="wrap">
+    <div class="pp-head">
+      <div class="kicker kicker-gold" data-en="WHAT YOU GET" data-ar="قيمة العضوية">WHAT YOU GET</div>
+      <h2 class="section-title" data-en="Four pillars of <span class='gold'>ongoing value</span>" data-ar="أربع محاور <span class='gold'>لقيمة مستمرة</span>">Four pillars of <span class="gold">ongoing value</span></h2>
+      <p class="lead" data-en="Every benefit is shown with its conditions, validity and how to use it — no vague promises." data-ar="كل ميزة بتظهر بشروطها وصلاحيتها وطريقة استخدامها — من غير وعود مبهمة.">Every benefit is shown with its conditions, validity and how to use it — no vague promises.</p>
+    </div>
+    <div class="pp-pillars">
+      <article class="pp-pillar" style="--c:#F3AE12"><span class="pp-ib"><svg class="ico"><use href="#i-id"/></svg></span><b class="pp-n">01</b>
+        <h3 data-en="Identity & Verification" data-ar="الهوية والتحقق">Identity & Verification</h3>
+        <ul data-en="<li>Unique membership number</li><li>Digital card</li><li>QR verification</li><li>Achievement badges</li><li>One certificate profile</li>" data-ar="<li>رقم عضوية فريد</li><li>بطاقة رقمية</li><li>تحقق بـ QR</li><li>شارات إنجاز</li><li>ملف شهادات موحّد</li>"><li>Unique membership number</li><li>Digital card</li><li>QR verification</li><li>Achievement badges</li><li>One certificate profile</li></ul></article>
+      <article class="pp-pillar" style="--c:#5B9BE6"><span class="pp-ib"><svg class="ico"><use href="#i-book"/></svg></span><b class="pp-n">02</b>
+        <h3 data-en="Learning & Growth" data-ar="التعلم والتطوير">Learning & Growth</h3>
+        <ul data-en="<li>Exclusive monthly session</li><li>Workshops & webinars</li><li>Assessment tests</li><li>Extra content</li><li>Advanced tracks</li>" data-ar="<li>محاضرة حصرية شهرية</li><li>ورش وندوات</li><li>اختبارات تقييم</li><li>محتوى إضافي</li><li>مسارات متقدمة</li>"><li>Exclusive monthly session</li><li>Workshops & webinars</li><li>Assessment tests</li><li>Extra content</li><li>Advanced tracks</li></ul></article>
+      <article class="pp-pillar" style="--c:#4FBF8B"><span class="pp-ib"><svg class="ico"><use href="#i-brief"/></svg></span><b class="pp-n">03</b>
+        <h3 data-en="Career Support" data-ar="الدعم المهني">Career Support</h3>
+        <ul data-en="<li>CV & LinkedIn review</li><li>Career guidance</li><li>Internship & job openings</li><li>Graduate project showcase</li>" data-ar="<li>مراجعة CV وLinkedIn</li><li>إرشاد مهني</li><li>فرص تدريب ووظائف</li><li>عرض مشروعات الخريجين</li>"><li>CV & LinkedIn review</li><li>Career guidance</li><li>Internship & job openings</li><li>Graduate project showcase</li></ul></article>
+      <article class="pp-pillar" style="--c:#FF8A3D"><span class="pp-ib"><svg class="ico"><use href="#i-ticket"/></svg></span><b class="pp-n">04</b>
+        <h3 data-en="Perks & Partnerships" data-ar="الامتيازات والشراكات">Perks & Partnerships</h3>
+        <ul data-en="<li>ESA discounts</li><li>Partner offers</li><li>Training credit (conditions apply)</li><li>Event priority</li><li>Referral rewards</li>" data-ar="<li>خصومات ESA</li><li>عروض الشركاء</li><li>رصيد تدريبي بشروط</li><li>أولوية في الفعاليات</li><li>مكافآت ترشيح</li>"><li>ESA discounts</li><li>Partner offers</li><li>Training credit (conditions apply)</li><li>Event priority</li><li>Referral rewards</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIERS ============ -->
+<section class="pp-sec pp-tiers-sec" id="tiers">
+  <div class="wrap">
+    <div class="pp-head">
+      <div class="kicker kicker-gold" data-en="MEMBERSHIP TIERS" data-ar="مستويات العضوية">MEMBERSHIP TIERS</div>
+      <h2 class="section-title" data-en="Basic membership for <span class='gold'>everyone</span> — distinction is <span class='gold'>earned</span>" data-ar="عضوية أساسية <span class='gold'>للجميع</span>… وتميّز <span class='gold'>يُكتسب</span> بالإنجاز">Basic membership for <span class="gold">everyone</span> — distinction is <span class="gold">earned</span></h2>
+      <p class="lead" data-en="Core benefits are never tied to buying extra courses. Higher tiers are granted against published criteria." data-ar="المزايا الأساسية مش مرتبطة بشراء دورات إضافية، والمستويات الأعلى بتتمنح حسب معايير منشورة.">Core benefits are never tied to buying extra courses. Higher tiers are granted against published criteria.</p>
+    </div>
+    <div class="pp-steps">
+      <article class="pp-step" style="--c:#4FBF8B;--h:62%"><div class="pp-step-bar"><svg class="ico"><use href="#i-badge"/></svg><span>GRADUATE</span></div><b class="pp-n">01</b>
+        <h3 data-en="Graduate — core tier" data-ar="Graduate — المستوى الأساسي">Graduate — core tier</h3>
+        <p data-en="For everyone who meets the ESA certificate requirements: membership number, certificate profile, online verification, the graduate community and core benefits." data-ar="لكل من استوفى شروط شهادة ESA: رقم عضوية، ملف شهادات، تحقق إلكتروني، مجتمع الخريجين، والمزايا الأساسية.">For everyone who meets the ESA certificate requirements: membership number, certificate profile, online verification, the graduate community and core benefits.</p></article>
+      <article class="pp-step" style="--c:#5B9BE6;--h:80%"><div class="pp-step-bar"><svg class="ico"><use href="#i-star"/></svg><span>ACHIEVER</span></div><b class="pp-n">02</b>
+        <h3 data-en="Achiever — achievement tier" data-ar="Achiever — مستوى الإنجاز">Achiever — achievement tier</h3>
+        <p data-en="For graduates who meet extra criteria such as completing several programs, outstanding assessment results, or documented learning contributions." data-ar="لمن يحقق معايير إضافية زي إتمام برامج متعددة، أو نتائج تقييم متميزة، أو مشاركة تعليمية موثّقة.">For graduates who meet extra criteria such as completing several programs, outstanding assessment results, or documented learning contributions.</p></article>
+      <article class="pp-step" style="--c:#F3AE12;--h:100%"><div class="pp-step-bar"><svg class="ico"><use href="#i-crown"/></svg><span>AMBASSADOR</span></div><b class="pp-n">03</b>
+        <h3 data-en="Ambassador — ESA ambassador" data-ar="Ambassador — سفير ESA">Ambassador — ESA ambassador</h3>
+        <p data-en="Outstanding graduates nominated and selected to contribute to ESA activities and events, under a clear assignment and rules." data-ar="ترشيح واختيار الخريجين المتميزين للمساهمة في الأنشطة والفعاليات، وفق تكليف وضوابط واضحة.">Outstanding graduates nominated and selected to contribute to ESA activities and events, under a clear assignment and rules.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="pp-sec" id="journey">
+  <div class="wrap">
+    <div class="pp-head">
+      <div class="kicker kicker-gold" data-en="GRADUATE JOURNEY" data-ar="رحلة الخريج">GRADUATE JOURNEY</div>
+      <h2 class="section-title" data-en="From <span class='gold'>registration</span> to <span class='gold'>benefit</span>" data-ar="من <span class='gold'>التسجيل</span> إلى <span class='gold'>الاستفادة</span>">From <span class="gold">registration</span> to <span class="gold">benefit</span></h2>
+    </div>
+    <ol class="pp-journey">
+      <li><span class="pp-dot"><svg class="ico"><use href="#i-userplus"/></svg></span><b data-en="Registration" data-ar="التسجيل">Registration</b><p data-en="Basic data, the exact name for the certificate and contact consent." data-ar="البيانات الأساسية والاسم الصحيح للشهادة وموافقات التواصل.">Basic data, the exact name for the certificate and contact consent.</p></li>
+      <li class="chk"><span class="pp-dot"><svg class="ico"><use href="#i-clip"/></svg></span><b data-en="Requirements check" data-ar="استيفاء المتطلبات">Requirements check</b><p data-en="Attendance, assessment, tests and program requirements are reviewed." data-ar="مراجعة الحضور والتقييم والاختبارات ومتطلبات البرنامج.">Attendance, assessment, tests and program requirements are reviewed.</p></li>
+      <li class="chk"><span class="pp-dot"><svg class="ico"><use href="#i-file"/></svg></span><b data-en="Certificate issued" data-ar="إصدار الشهادة">Certificate issued</b><p data-en="A certificate with its own serial number and a QR code for verification." data-ar="شهادة برقم تسلسلي مستقل ورمز QR للتحقق.">A certificate with its own serial number and a QR code for verification.</p></li>
+      <li><span class="pp-dot"><svg class="ico"><use href="#i-id"/></svg></span><b data-en="Membership created" data-ar="إنشاء العضوية">Membership created</b><p data-en="A Graduate ID is generated and the certificate is linked to it." data-ar="توليد Graduate ID وربط الشهادة بحساب الخريج.">A Graduate ID is generated and the certificate is linked to it.</p></li>
+      <li><span class="pp-dot"><svg class="ico"><use href="#i-send"/></svg></span><b data-en="Activation message" data-ar="دعوة التفعيل">Activation message</b><p data-en="You receive your Graduate ID and your card link." data-ar="يوصلك رقم الخريج ورابط بطاقتك.">You receive your Graduate ID and your card link.</p></li>
+      <li><span class="pp-dot"><svg class="ico"><use href="#i-grid"/></svg></span><b data-en="Explore benefits" data-ar="استعراض المزايا">Explore benefits</b><p data-en="Services, offers and events available to graduates." data-ar="الخدمات والعروض والفعاليات المتاحة للخريج.">Services, offers and events available to graduates.</p></li>
+      <li><span class="pp-dot"><svg class="ico"><use href="#i-tap"/></svg></span><b data-en="Use benefits" data-ar="استخدام المزايا">Use benefits</b><p data-en="Your membership is checked and each use is recorded." data-ar="التحقق من العضوية وتسجيل كل استفادة.">Your membership is checked and each use is recorded.</p></li>
+      <li><span class="pp-dot"><svg class="ico"><use href="#i-edit"/></svg></span><b data-en="Profile grows" data-ar="تحديث الملف">Profile grows</b><p data-en="Every new certificate is added to the same ID." data-ar="أي شهادة جديدة بتتضاف لنفس الرقم.">Every new certificate is added to the same ID.</p></li>
+    </ol>
+    <p class="pp-legend"><span class="l1"></span><span data-en="Mandatory check before issuing" data-ar="نقطة تحقق إلزامية قبل الإصدار">Mandatory check before issuing</span></p>
+  </div>
+</section>
+
+<!-- ============ OFFERS & EVENTS ============ -->
+<section class="pp-sec pp-offers-sec" id="offers">
+  <div class="wrap">
+    <div class="pp-head">
+      <div class="kicker kicker-gold" data-en="OFFERS & EVENTS" data-ar="العروض والفعاليات">OFFERS & EVENTS</div>
+      <h2 class="section-title" data-en="A benefit you can <span class='gold'>actually use</span>" data-ar="ميزة تُستخدم <span class='gold'>فعلًا</span>… لا وعدًا إعلانيًا">A benefit you can <span class="gold">actually use</span></h2>
+      <p class="lead" data-en="Offers are published here only after they are agreed in writing, with their conditions and validity." data-ar="العروض بتتنشر هنا بس بعد الاتفاق عليها كتابيًا، بشروطها ومدة صلاحيتها.">Offers are published here only after they are agreed in writing, with their conditions and validity.</p>
+    </div>
+    <div class="pp-two">
+      <div><h3 class="pp-sub"><svg class="ico"><use href="#i-ticket"/></svg><span data-en="Current offers" data-ar="العروض الحالية">Current offers</span></h3><div id="ppOffers" class="pp-list"></div></div>
+      <div><h3 class="pp-sub"><svg class="ico"><use href="#i-cal"/></svg><span data-en="Upcoming events" data-ar="الفعاليات القادمة">Upcoming events</span></h3><div id="ppEvents" class="pp-list"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="pp-sec" id="faq">
+  <div class="wrap pp-faq-wrap">
+    <div class="pp-head">
+      <div class="kicker kicker-gold" data-en="QUESTIONS" data-ar="أسئلة شائعة">QUESTIONS</div>
+      <h2 class="section-title" data-en="Good to <span class='gold'>know</span>" data-ar="حاجات <span class='gold'>تهمك</span>">Good to <span class="gold">know</span></h2>
+    </div>
+    <div class="pp-faq">
+      <details><summary data-en="How do I get my Graduate ID?" data-ar="إزاي أعرف رقم الخريج بتاعي؟">How do I get my Graduate ID?</summary><p data-en="It is sent to you in your activation message once your certificate is issued. If you did not receive it, message us on WhatsApp." data-ar="بيوصلك في رسالة التفعيل بعد إصدار شهادتك. لو ما وصلكش، كلمنا على واتساب.">It is sent to you in your activation message once your certificate is issued. If you did not receive it, message us on WhatsApp.</p></details>
+      <details><summary data-en="Who can join?" data-ar="مين يقدر ينضم؟">Who can join?</summary><p data-en="Every trainee who meets the requirements of an ESA completion certificate, in any program." data-ar="أي متدرب استوفى شروط شهادة إتمام تدريب من ESA، في أي برنامج.">Every trainee who meets the requirements of an ESA completion certificate, in any program.</p></details>
+      <details><summary data-en="What does a public lookup show?" data-ar="إيه اللي بيظهر لما حد يتحقق من رقمي؟">What does a public lookup show?</summary><p data-en="Only your name, tier, membership status and your ESA certificates. Your phone number and email are never shown." data-ar="اسمك ومستواك وحالة العضوية وشهادات ESA بس. رقم موبايلك وإيميلك عمرهم ما بيظهروا.">Only your name, tier, membership status and your ESA certificates. Your phone number and email are never shown.</p></details>
+      <details><summary data-en="My name or a certificate is wrong. What do I do?" data-ar="اسمي أو شهادة فيها غلط، أعمل إيه؟">My name or a certificate is wrong. What do I do?</summary><p data-en="Use the “Request a correction” button on your card; it sends us your ID on WhatsApp so we can fix it." data-ar="دوس على زرار «طلب تصحيح» في بطاقتك، هيبعتلنا رقمك على واتساب عشان نصلّح البيانات.">Use the “Request a correction” button on your card; it sends us your ID on WhatsApp so we can fix it.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="pp-cta">
+  <div class="wrap pp-cta-in">
+    <div><h2 data-en="Your membership continues… <br>and your opportunities don’t stop." data-ar="عضويتك مستمرة…<br>وفرصك لا تتوقف.">Your membership continues… <br>and your opportunities don’t stop.</h2></div>
+    <div class="pp-cta-btns"><a class="btn btn-dark" href="#card" data-en="Open My Card" data-ar="افتح بطاقتي">Open My Card</a><a class="btn btn-line" id="ppWa" href="#" target="_blank" rel="noopener"><svg class="ico"><use href="#i-whatsapp"/></svg><span data-en="Ask on WhatsApp" data-ar="اسألنا على واتساب">Ask on WhatsApp</span></a></div>
+  </div>
+</section>
+</main>
+
+<footer class="pp-foot"><div class="wrap pp-foot-in"><img src="esa-logo.webp" alt="ESA — Excellence in Every Skill" class="pp-foot-logo"><span>ESA Graduate Passport · <a href="../" data-en="ESA Academy" data-ar="أكاديمية ESA">ESA Academy</a></span><span class="pp-tag">LEARN TODAY. LEAD TOMORROW.</span></div></footer>
+
+<script src="config.js?v=1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+<script src="passport.js?v=1" defer></script>
+</body>
+</html>
