@@ -219,3 +219,5 @@
   .pp-print,.pp-print *{visibility:visible}
   .pp-print{position:absolute;inset:0 auto auto 0;width:86mm!important;aspect-ratio:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+.pp-name small{letter-spacing:0;font-size:12px;color:#a9a9b0;margin-top:2px}
+.pp-tag,.pp-foot-in>span:nth-child(2){direction:ltr;unicode-bidi:isolate}
