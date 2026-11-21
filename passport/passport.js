@@ -41,8 +41,34 @@
     events: { ok: true, demo: true, items: [{ title_en: 'Sample event', title_ar: 'فعالية تجريبية', date: '2026-12-10', place_en: 'Online', place_ar: 'أونلاين', link: '' }] }
   };
 
+  /* Static passports built from the trainees spreadsheet (tools/build_certificates.py).
+     Each record is encrypted with its own GP code, so the file reveals nothing
+     until someone types an exact code. */
+  let PDB = null;
+  const enc = new TextEncoder();
+  const sha = async s => new Uint8Array(await crypto.subtle.digest('SHA-256', enc.encode(s)));
+  const hex = b => [...b].map(x => x.toString(16).padStart(2, '0')).join('');
+  async function staticDB() {
+    if (PDB !== null) return PDB;
+    try { const r = await fetch('../passports.json', { cache: 'no-cache' }); PDB = r.ok ? await r.json() : false; } catch (e) { PDB = false; }
+    return PDB;
+  }
+  async function staticGraduate(id) {
+    const db = await staticDB();
+    const rec = db && db.records && db.records[hex(await sha('esa-gpidx|' + db.salt + '|' + id))];
+    if (!rec) return { ok: false };
+    const raw = Uint8Array.from(atob(rec), c => c.charCodeAt(0));
+    const k = await crypto.subtle.importKey('raw', await sha('esa-gpkey|' + db.salt + '|' + id), 'AES-GCM', false, ['decrypt']);
+    const d = JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: raw.slice(0, 12) }, k, raw.slice(12))));
+    return { ok: true, graduate: d.graduate, certificates: d.certificates };
+  }
+
   async function api(action, extra = {}) {
-    if (!API) return DEMO ? SAMPLE[action] : null;
+    if (!API) {
+      if (DEMO) return SAMPLE[action];
+      if (action === 'graduate') { const db = await staticDB(); return db && db.count ? staticGraduate(extra.id) : null; }
+      return null;
+    }
     const u = new URL(API);
     u.searchParams.set('action', action);
     Object.entries(extra).forEach(([k, v]) => u.searchParams.set(k, v));
@@ -119,7 +145,7 @@
     const id = normId(raw);
     if (!id) { input.focus(); return; }
     lastId = id;
-    if (!API && !DEMO) { last = 'off'; render(); return; }
+    if (!API && !DEMO) { const db = await staticDB(); if (!db || !db.count) { last = 'off'; render(); return; } }
     out.innerHTML = `<p class="pp-loading">${t('Checking…', 'جاري البحث…')}</p>`;
     try { last = await api('graduate', { id }); } catch (e) { last = 'err'; }
     if (lastId !== id) return;

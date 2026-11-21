@@ -120,10 +120,13 @@
     const rows = [
       [ar ? 'رقم الشهادة' : 'Certificate ID', `<span dir="ltr">${esc(id)}</span>`],
       rec.name ? [ar ? 'اسم المتدرب' : 'Trainee', esc(rec.name)] : null,
-      [ar ? 'البرنامج' : 'Program', esc(ar ? courseAr : rec.course)],
-      rec.date ? [ar ? 'تاريخ الإصدار' : 'Issued', `<span dir="ltr">${esc(rec.date)}</span>`] : null
+      [ar ? 'الكورس' : 'Course', esc(ar ? courseAr : rec.course)],
+      [ar ? 'النتيجة' : 'Result', ar ? 'ناجح — Passed' : 'Passed'],
+      rec.date ? [ar ? 'تاريخ الاجتياز' : 'Date passed', `<span dir="ltr">${esc(rec.date)}</span>`] : null
     ].filter(Boolean).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('');
-    show('ok', `<span class="vr-ico"><svg class="ico"><use href="#i-check"/></svg></span><div><h4>${ar ? 'رقم صحيح — الشهادة معتمدة' : 'Valid ID — Certificate verified'}</h4><p>${ar ? 'اجتاز المتدرب البرنامج التالي بنجاح في ESA Academy.' : 'This trainee successfully completed the following ESA Academy program.'}</p><dl>${rows}</dl></div>`);
+    const who = rec.name ? esc(rec.name) : (ar ? 'المتدرب' : 'This trainee');
+    const when = rec.date ? (ar ? ` بتاريخ <span dir="ltr">${esc(rec.date)}</span>` : ` on <span dir="ltr">${esc(rec.date)}</span>`) : '';
+    show('ok', `<span class="vr-ico"><svg class="ico"><use href="#i-check"/></svg></span><div><span class="vr-pass">PASSED</span><h4>${ar ? 'شهادة صحيحة وصادرة من ESA Academy' : 'Valid certificate issued by ESA Academy'}</h4><p>${ar ? `<b><bdi>${who}</bdi></b> اجتاز كورس <b><bdi>${esc(courseAr)}</bdi></b> بنجاح${when}.` : `<b>${who}</b> passed <b>${esc(rec.course)}</b>${when}.`}</p><dl>${rows}</dl></div>`);
   }
   window.__reverify = () => { if (vOut.innerHTML && vInput.value.trim()) verify(vInput.value); };
   vForm.addEventListener('submit', e => { e.preventDefault(); verify(vInput.value); });

@@ -355,3 +355,6 @@ section{position:relative}
 [dir=rtl] .passport-teaser .pt-arr{transform:scaleX(-1)}
 .links a,.actions .btn{white-space:nowrap}
 @media(min-width:851px) and (max-width:1050px){.btn-passport span{display:none}.btn-passport{padding:10px 11px}.nav{gap:12px}.links{gap:0;font-size:13px}.links a{padding:9px 8px}.actions{gap:8px}}
+
+.vr-pass{display:inline-block;margin-bottom:6px;padding:3px 10px;border-radius:999px;background:var(--gold);color:#111;font:800 11px/1.4 var(--num);letter-spacing:.18em}
+.vr p b{color:var(--white)}
